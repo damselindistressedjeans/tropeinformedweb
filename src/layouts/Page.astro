@@ -1,0 +1,29 @@
+---
+import Base from '../components/Base.astro';
+import Container from '../components/Container.astro';
+import type { Area } from '../types/Area';
+
+interface Props {
+    title: string;
+    description: string;
+    heading: string;
+    currentArea: Area;
+}
+
+const { title, description, heading, currentArea } = Astro.props;
+---
+
+<Base title={title} description={description} currentArea={currentArea}>
+    <Container>
+        <h1>{heading}</h1>
+        <slot />
+    </Container>
+    <slot name="sections" />
+</Base>
+
+<style>
+    h1 {
+        font-size: var(--huge-text);
+        line-height: var(--huge-line-height);
+    }
+</style>

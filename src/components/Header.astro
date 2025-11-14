@@ -1,0 +1,87 @@
+---
+import type { Area } from '../types/Area';
+import Navigation from './Navigation.astro';
+
+interface Props {
+    currentArea: Area;
+}
+
+const { currentArea } = Astro.props;
+---
+
+<header role="banner">
+    <a href="/">
+        {
+            currentArea === 'home' ? (
+                <h1>Trope_Informed PARAM PLZ</h1>
+            ) : (
+                <span class="title">Trope_Informed</span>
+            )
+        }
+    </a>
+    <Navigation
+        currentArea={currentArea}
+        items={[
+            {
+                title: 'News',
+                url: '/news/',
+                area: 'news',
+            },
+            {
+                title: 'Findings',
+                url: '/findings/',
+                area: 'findings',
+            },
+            {
+                title: 'Tools',
+                url: '/tools/',
+                area: 'tools',
+            },
+            {
+                title: 'Collaborate',
+                url: '/collaborate/',
+                area: 'collaborate',
+            },
+        ]}
+    />
+</header>
+
+<style>
+    header {
+        /* background: light-dark(white, black); */
+        /* box-shadow: 0 -1rem 1rem 1rem rgba(0, 0, 0, 0.25); */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    a {
+        color: inherit;
+        display: block;
+        height: 1.5rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        color: #ac001f;
+    }
+
+    h1,
+    .title {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 900;
+        line-height: 1.5rem;
+    }
+
+    h1:after,
+    .title:after {
+        content: ':';
+        top: -0.1rem;
+    }
+</style>

@@ -1,0 +1,43 @@
+---
+import type { Area } from '../types/Area';
+import NavigationLink from './NavigationLink.astro';
+
+interface Item {
+    title: string;
+    url: string;
+    area: Area;
+}
+
+interface Props {
+    currentArea: Area;
+    items: Item[];
+}
+
+const { currentArea, items } = Astro.props;
+---
+
+<nav>
+    <h2 class="visually-hidden">Main navigation</h2>
+    <ul>
+        {
+            items.map(({ title, url, area }) => (
+                <NavigationLink
+                    title={title}
+                    url={url}
+                    current={currentArea === area}
+                />
+            ))
+        }
+    </ul>
+</nav>
+
+<style>
+    nav {
+        display: block;
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+    }
+</style>

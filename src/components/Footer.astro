@@ -1,0 +1,101 @@
+---
+import Container from './Container.astro';
+
+const year = new Date().getFullYear();
+---
+
+<Container>
+    <footer role="contentinfo">
+        <div class="columns">
+            <nav>
+                <h2>Navigation</h2>
+                <div class="_lists">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/news/">News</a></li>
+                        <li><a href="/findings/">Findings</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/tools/">Tools</a></li>
+                        <li><a href="/collaborate/">Collaborate</a></li>
+                        <li><a href="/collaborate/#about">About us ??!!</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <section>
+                <h2>Keep in touch</h2>
+                <ul>
+                    <li><a>Subscribe to our mailing list</a></li>
+                    <li>
+                        <a href="https://www.stir.ac.uk/people/1932673"
+                            >Contact Steph Rennick</a
+                        >
+                    </li>
+                    <li class="standalone">
+                        RSS: <a href="/news.xml">News</a> &middot; <a
+                            href="/findings.xml">Findings</a
+                        >
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <p class="copyright">
+            © Trope-Informed {year === 2025 ? year : `2025-${year}`}
+        </p>
+    </footer>
+</Container>
+
+<style>
+    footer {
+        font-size: var(--small-text);
+        line-height: var(--small-line-height);
+        padding: 2rem 0;
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .standalone {
+        margin-top: 1rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .copyright {
+        color: var(--text-color-light);
+        border-top: 0.0625rem solid var(--text-color-light);
+        font-size: var(--tiny-text);
+        margin-top: 1rem;
+        padding-top: 0.5rem;
+        text-align: right;
+    }
+
+    @media (min-width: 400px) {
+        .columns {
+            flex-direction: row;
+            gap: 0;
+        }
+
+        .columns > * {
+            width: 50%;
+        }
+
+        /* .lists {
+            display: flex;
+            gap: 1rem;
+        } */
+
+        /* nav ul {
+            width: 50%;
+        } */
+    }
+</style>

@@ -1,0 +1,41 @@
+---
+interface Props {
+    heading: string;
+    colour: 'blue' | 'green';
+    nested?: boolean;
+}
+
+const { heading, colour, nested } = Astro.props;
+
+const colours = {
+    blue: colour === 'blue',
+    green: colour === 'green',
+};
+---
+
+<section class:list={[colours]}>
+    {nested ? <h3>{heading}</h3> : <h2>{heading}</h2>}
+    <slot />
+</section>
+
+<style>
+    section {
+        display: block;
+        /* margin: 2rem 0; */
+        padding: 1rem;
+    }
+
+    .blue {
+        background: cornflowerblue;
+    }
+
+    .green {
+        background: aquamarine;
+    }
+
+    h2,
+    h3 {
+        font-size: var(--large-text);
+        margin-bottom: 1rem;
+    }
+</style>
