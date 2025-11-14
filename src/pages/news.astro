@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Page from '../layouts/Page.astro';
+import ArticleLink from '../components/ArticleLink.astro';
+
+const items = await getCollection('news');
+
+items.sort((a, b) => {
+    return a.id < b.id ? 1 : -1;
+});
+---
+
+<Page
+    title="News"
+    description="The latest news from the Trope Informed team."
+    heading="📰 Latest news"
+    currentArea="news"
+>
+    <ul>
+        {
+            items.map((item) => (
+                <li>
+                    <ArticleLink
+                        date={item.data.date.toLocaleDateString('en-GB')}
+                        title={item.data.title}
+                        description={item.data.abstract}
+                        permalink={`./${item.id}/`}
+                    />
+                </li>
+            ))
+        }
+    </ul>
+</Page>
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        margin-top: 1rem;
+    }
+</style>

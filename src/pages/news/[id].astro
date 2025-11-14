@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from 'astro:content';
+import BodyCopy from '../../components/BodyCopy.astro';
+import Page from '../../layouts/Page.astro';
+
+export async function getStaticPaths() {
+    const items = await getCollection('news');
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+
+const { title, description, date, author } = item.data;
+---
+
+<Page
+    title={title}
+    description={description}
+    heading={title}
+    currentArea="news"
+>
+    <ul class="meta">
+        <li>{date.toLocaleDateString('en-GB')}</li>
+        {author ? <li>{author}</li> : null}
+    </ul>
+    <BodyCopy>
+        <Content />
+    </BodyCopy>
+</Page>
+
+<style>
+    .meta {
+        font-size: var(--small-text);
+        line-height: var(--small-line-height);
+        list-style-type: none;
+        margin: 0.5rem 0 1.5rem;
+    }
+</style>

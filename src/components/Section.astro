@@ -1,0 +1,46 @@
+---
+import Container from './Container.astro';
+
+interface Props {
+    heading: string;
+    colour?: 'blue' | 'green';
+}
+
+const { heading, colour } = Astro.props;
+
+const colours = {
+    blue: colour === 'blue',
+    green: colour === 'green',
+};
+---
+
+<section class:list={[colours]}>
+    <Container>
+        <h2>{heading}</h2>
+        <slot />
+    </Container>
+</section>
+
+<style>
+    section {
+        display: block;
+        padding: 2rem 0;
+    }
+
+    section:first-of-type {
+        margin-top: 2rem;
+    }
+
+    .blue {
+        background: cornflowerblue;
+    }
+
+    .green {
+        background: aquamarine;
+    }
+
+    h2 {
+        font-size: var(--large-text);
+        margin-bottom: 1rem;
+    }
+</style>

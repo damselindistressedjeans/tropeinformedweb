@@ -1,0 +1,69 @@
+---
+import BodyCopy from '../components/BodyCopy.astro';
+import Grid from '../components/Grid.astro';
+import Panel from '../components/Panel.astro';
+import Section from '../components/Section.astro';
+import Home from '../layouts/Home.astro';
+---
+
+<Home>
+    <p>Hello, world! Welcome to the homepage of <b>Trope Informed</b>.</p>
+    <Panel heading="Panel" colour="blue" />
+    <p>Here's another paragraph, just to separate stuff out.</p>
+    <p>After this, let's put in a grid of panels.</p>
+    <Grid>
+        <Panel heading="Panel1" colour="blue">
+            <p>here's some text</p>
+        </Panel>
+        <Panel heading="Panel2" colour="blue">
+            <p>
+                here's some text, which we'll be sure to vary the length of to
+                see how things behave
+            </p>
+        </Panel>
+        <Panel heading="Panel3" colour="blue">
+            <p>here's some text</p>
+        </Panel>
+        <Panel heading="Panel4" colour="blue">
+            <p>here's some text</p>
+        </Panel>
+        <Panel heading="Panel5" colour="blue">
+            <p>here's some text</p>
+        </Panel>
+        <Panel heading="Panel6" colour="blue">
+            <p>here's some text</p>
+        </Panel>
+    </Grid>
+    <Section heading="Section 1" colour="blue" slot="sections">
+        <BodyCopy>
+            <p>Blah blah blah</p>
+            <p>Here's some content innit</p>
+        </BodyCopy>
+    </Section>
+    <Section heading="Section 2" colour="green" slot="sections">
+        <Grid>
+            <Panel heading="Panel1" colour="blue" nested>
+                <p>here's some text</p>
+            </Panel>
+            <Panel heading="Panel2" colour="blue" nested>
+                <p>
+                    here's some text, which we'll be sure to vary the length of
+                    to see how things behave
+                </p>
+            </Panel>
+            <Panel heading="Panel3" colour="blue" nested>
+                <p>here's some text</p>
+            </Panel>
+            <Panel heading="Panel4" colour="blue" nested>
+                <p>here's some text</p>
+            </Panel>
+            <Panel heading="Panel5" colour="blue" nested>
+                <p>here's some text</p>
+            </Panel>
+            <Panel heading="Panel6" colour="blue" nested>
+                <p>here's some text</p>
+            </Panel>
+        </Grid>
+    </Section>
+    <Section heading="Section 3" slot="sections" />
+</Home>
