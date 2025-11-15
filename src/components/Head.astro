@@ -9,6 +9,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const { title: siteTitle, description: defaultDescription } = constants.meta;
+const { title: feedTitle } = constants.meta.feed;
 ---
 
 <head>
@@ -18,6 +19,12 @@ const { title: siteTitle, description: defaultDescription } = constants.meta;
     <meta
         name="description"
         content={description ? description : defaultDescription}
+    />
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        href="/feed.xml"
+        title={feedTitle}
     />
     <GlobalStyles />
 </head>

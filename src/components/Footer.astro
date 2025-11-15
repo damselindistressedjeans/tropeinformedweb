@@ -1,7 +1,10 @@
 ---
 import Container from './Container.astro';
+import { constants } from '../constants';
 
 const year = new Date().getFullYear();
+
+const { mailingListUrl } = constants.meta;
 ---
 
 <Container>
@@ -25,16 +28,18 @@ const year = new Date().getFullYear();
             <section>
                 <h2>Keep in touch</h2>
                 <ul>
-                    <li><a>Subscribe to our mailing list</a></li>
                     <li>
                         <a href="https://www.stir.ac.uk/people/1932673"
                             >Contact Steph Rennick</a
                         >
                     </li>
-                    <li class="standalone">
-                        RSS: <a href="/news.xml">News</a> &middot; <a
-                            href="/findings.xml">Findings</a
+                    <li>
+                        <a href={mailingListUrl}
+                            >Subscribe to our mailing list</a
                         >
+                    </li>
+                    <li>
+                        <a href="/feed.xml">Subscribe via RSS</a>
                     </li>
                 </ul>
             </section>
