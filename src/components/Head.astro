@@ -1,6 +1,5 @@
 ---
 import { constants } from '../constants';
-import GlobalStyles from './GlobalStyles.astro';
 
 interface Props {
     title?: string;
@@ -15,6 +14,8 @@ const { title: feedTitle } = constants.meta.feed;
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+
     <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
     <meta
         name="description"
@@ -26,5 +27,4 @@ const { title: feedTitle } = constants.meta.feed;
         href="/feed.xml"
         title={feedTitle}
     />
-    <GlobalStyles />
 </head>
