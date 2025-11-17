@@ -1,11 +1,14 @@
 ---
+import type { CTA } from '../types/CTA';
+
 interface Props {
     heading: string;
+    cta?: CTA;
     colour: 'blue' | 'green';
     nested?: boolean;
 }
 
-const { heading, colour, nested } = Astro.props;
+const { heading, cta, colour, nested } = Astro.props;
 
 const colours = {
     blue: colour === 'blue',
@@ -16,9 +19,10 @@ const colours = {
 <section class:list={[colours]}>
     {nested ? <h3>{heading}</h3> : <h2>{heading}</h2>}
     <slot />
+    {cta && <a href={cta.url}>{cta.text}</a>}
 </section>
 
-<style>
+<!-- <style>
     section {
         display: block;
         /* margin: 2rem 0; */
@@ -38,4 +42,4 @@ const colours = {
         font-size: var(--large-text);
         margin-bottom: 1rem;
     }
-</style>
+</style> -->
