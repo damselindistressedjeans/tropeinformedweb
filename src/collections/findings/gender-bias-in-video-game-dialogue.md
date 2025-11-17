@@ -3,7 +3,7 @@ title: Gender Bias in Video Game Dialogue
 source: Rennick, S. Clinton, M., Ioannidou, E., Oh, L, Clooney, C., E.T., Healy, E., Roberts, S. G. (2023), "Gender Bias in Video Game Dialogue", *Royal Society Open Science*. 
 url: https://royalsocietypublishing.org/doi/10.1098/rsos.221095
 category: gender
-tags: journal article, gender bias, VGDC
+tags: [journal article, gender bias, VGDC]
 ---
 
 A study led by [Stephanie Rennick](https://www.stir.ac.uk/people/1932673) at the University of Stirling and [Seán Roberts](https://www.cardiff.ac.uk/people/view/1742244-) at Cardiff University performed the first large-scale test of gender imbalance in the dialogue of 50 role-playing games. It discovered that games include nearly twice as much male dialogue as female dialogue on average.
