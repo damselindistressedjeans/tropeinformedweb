@@ -8,6 +8,36 @@ tags: journal article, gender bias, VGDC
 
 A study led by [Stephanie Rennick](https://www.stir.ac.uk/people/1932673) at the University of Stirling and [Seán Roberts](https://www.cardiff.ac.uk/people/view/1742244-) at Cardiff University performed the first large-scale test of gender imbalance in the dialogue of 50 role-playing games. It discovered that games include nearly twice as much male dialogue as female dialogue on average.
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+
+<script>
+
+	function setupPiechart(){
+        var ctx = $("#chart-line");
+        var myLineChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["Female","Male","Non-binary"],
+                datasets: [{
+                    data: [1997203, 3682766, 11799+27+705],
+                    backgroundColor: ["#eb0085", "#75abcf", "#a644fc"]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Number of Words of Dialogue'
+                }
+            }
+        });
+	}
+
+    $(document).ready(function() {
+    	setupPiechart();
+    });
+</script>
+<canvas id="chart-line" class="chartjs-render-monitor" style="display: block; width: 672px; height: 336px;" height="420" width="840"></canvas>
+
 ### Main Findings
 - 35% of words were spoken by female characters.
 - 29% of characters were female, which suggests the imbalance is driven by a lack of female characters.
