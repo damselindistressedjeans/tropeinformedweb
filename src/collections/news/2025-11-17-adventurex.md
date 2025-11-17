@@ -4,7 +4,7 @@ description: We're speaking about gender bias in video game dialogue at Adventur
 abstract: Steph and Sean will be at AdventureX 2025 in London on November 22nd with a talk entitled "What's going wrong with women's dialogue in video games?". AdventureX is the UK's convention dedicated to narrative-driven gaming, which brings together gamemakers passionate about interactive storytelling. We'll be discussing our findings on gender bias in video game dialogue and highlighting opportunities for gamemakers to create more inclusive experiences. 
 date: 2025-11-17
 author: 
-tags: events, talks, gender
+tags: [events, talks, gender]
 ---
 
 We are delighted to be included in [this year's line-up](https://www.adventurexpo.org/schedule) at **AdventureX 2025**, with a talk entitled "What's going wrong with women's dialogue in video games?". 
