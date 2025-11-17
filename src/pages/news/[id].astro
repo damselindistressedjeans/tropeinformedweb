@@ -1,6 +1,5 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BodyCopy from '../../components/BodyCopy.astro';
 import Page from '../../layouts/Page.astro';
 
 export async function getStaticPaths() {
@@ -27,16 +26,14 @@ const { title, description, date, author } = item.data;
         <li>{date.toLocaleDateString('en-GB')}</li>
         {author ? <li>{author}</li> : null}
     </ul>
-    <BodyCopy>
-        <Content />
-    </BodyCopy>
+    <Content />
 </Page>
 
-<style>
+<!-- <style>
     .meta {
         font-size: var(--small-text);
         line-height: var(--small-line-height);
         list-style-type: none;
         margin: 0.5rem 0 1.5rem;
     }
-</style>
+</style> -->
