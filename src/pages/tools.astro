@@ -1,4 +1,5 @@
 ---
+import Panel from '../components/Panel.astro';
 import Page from '../layouts/Page.astro';
 ---
 
@@ -8,5 +9,15 @@ import Page from '../layouts/Page.astro';
     heading="Our tools"
     currentArea="tools"
 >
-    <div>This is the CORPVS.</div>
+    <Panel
+        heading="The Video Game Dialogue Corpus"
+        colour="blue"
+        cta={{ text: 'View the VGDC on Github', url: 'FOOBAR' }}
+    >
+        <p>
+            This is a panel displaying information about the <abbr
+                title="Video Game Dialogue Corpus">VGDC</abbr
+            >.
+        </p>
+    </Panel>
 </Page>

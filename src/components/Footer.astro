@@ -1,7 +1,15 @@
 ---
 import Container from './Container.astro';
+import { constants } from '../constants';
 
 const year = new Date().getFullYear();
+
+const {
+    meta: { mailingListUrl },
+    contacts: {
+        steph: { email },
+    },
+} = constants;
 ---
 
 <Container>
@@ -9,93 +17,102 @@ const year = new Date().getFullYear();
         <div class="columns">
             <nav>
                 <h2>Navigation</h2>
-                <div class="_lists">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/news/">News</a></li>
-                        <li><a href="/findings/">Findings</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="/tools/">Tools</a></li>
-                        <li><a href="/collaborate/">Collaborate</a></li>
-                        <li><a href="/collaborate/#about">About us ??!!</a></li>
-                    </ul>
-                </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news/">News</a></li>
+                    <li><a href="/findings/">Findings</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/collaborate/">Collaborate</a></li>
+                    <li><a href="/collaborate/#about">About us</a></li>
+                </ul>
             </nav>
             <section>
                 <h2>Keep in touch</h2>
                 <ul>
-                    <li><a>Subscribe to our mailing list</a></li>
                     <li>
-                        <a href="https://www.stir.ac.uk/people/1932673"
-                            >Contact Steph Rennick</a
+                        <a href={email}>Contact us</a>
+                    </li>
+                    <li>
+                        <a href={mailingListUrl}
+                            >Subscribe to our mailing list</a
                         >
                     </li>
-                    <li class="standalone">
-                        RSS: <a href="/news.xml">News</a> &middot; <a
-                            href="/findings.xml">Findings</a
-                        >
+                    <li>
+                        <a href="/feed.xml">Subscribe via RSS</a>
                     </li>
                 </ul>
             </section>
         </div>
         <p class="copyright">
-            © Trope-Informed {year === 2025 ? year : `2025-${year}`}
+            © {year === 2025 ? year : `2025-${year}`} Trope Informed
         </p>
     </footer>
 </Container>
 
 <style>
     footer {
-        font-size: var(--small-text);
-        line-height: var(--small-line-height);
-        padding: 2rem 0;
+        --faint: var(--lighten-more);
+        --very-faint: var(--lighten);
+        --text: var(--off-white);
+        background: var(--primary);
+        border-radius: 2rem 2rem 0 0;
+        color: var(--text);
+        font-size: var(--small);
+        padding: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        footer {
+            background: var(--primary-dark);
+        }
     }
 
     .columns {
         display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        gap: 4rem;
+        justify-content: space-between;
     }
 
-    .standalone {
-        margin-top: 1rem;
+    section {
+        flex-grow: 1;
     }
 
     h2 {
-        margin-bottom: 1rem;
+        font-size: var(--tiny);
+        margin: 0 0 1rem;
+        text-transform: uppercase;
+    }
+
+    a,
+    a:visited,
+    a:hover,
+    a:focus,
+    a:active {
+        color: var(--off-white);
     }
 
     ul {
         list-style-type: none;
     }
 
-    .copyright {
-        color: var(--text-color-light);
-        border-top: 0.0625rem solid var(--text-color-light);
-        font-size: var(--tiny-text);
-        margin-top: 1rem;
-        padding-top: 0.5rem;
-        text-align: right;
+    @media (min-width: 30rem) {
+        nav ul {
+            column-count: 2;
+        }
     }
 
-    @media (min-width: 400px) {
-        .columns {
-            flex-direction: row;
-            gap: 0;
-        }
+    ul,
+    li {
+        margin: 0;
+        padding-left: 0;
+    }
 
-        .columns > * {
-            width: 50%;
-        }
-
-        /* .lists {
-            display: flex;
-            gap: 1rem;
-        } */
-
-        /* nav ul {
-            width: 50%;
-        } */
+    .copyright {
+        border-top: 0.0625rem solid var(--off-white);
+        font-size: var(--tiny);
+        margin: 2rem 0 0;
+        padding: 0.5rem 0 0;
+        text-align: right;
     }
 </style>

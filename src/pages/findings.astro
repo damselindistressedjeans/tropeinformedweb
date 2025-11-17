@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Page from '../layouts/Page.astro';
+
+const items = await getCollection('findings');
+
+items.sort((a, b) => {
+    return a.data.title < b.data.title ? 1 : -1;
+});
+---
+
+<Page
+    title="Findings"
+    description="This is what we have found out okay"
+    heading="Our findings"
+    currentArea="findings"
+>
+    <ul>
+        {
+            items.map((item) => (
+                <li>
+                    <h2>{item.data.title}</h2>
+                </li>
+            ))
+        }
+    </ul>
+</Page>

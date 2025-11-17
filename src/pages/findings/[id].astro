@@ -1,6 +1,5 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BodyCopy from '../../components/BodyCopy.astro';
 import Page from '../../layouts/Page.astro';
 
 export async function getStaticPaths() {
@@ -21,9 +20,7 @@ const { title, description, date, author } = item.data;
     title={title}
     description={description}
     heading={title}
-    currentArea="news"
+    currentArea="findings"
 >
-    <BodyCopy>
-        <Content />
-    </BodyCopy>
+    <Content />
 </Page>
