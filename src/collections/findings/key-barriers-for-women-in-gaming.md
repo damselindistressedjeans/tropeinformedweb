@@ -1,8 +1,8 @@
 ---
-title: "Key Barriers for Women in Gaming"
-source: "Rennick, S. & Roberts, S. G. (2025). "Not Gamers, Just Women Who Play Video Games: A Survey of Women’s Attitudes to Mobile Games in the UK", *Sex Roles*."
-url: "https://link.springer.com/article/10.1007/s11199-025-01612-3"
-category: "gender"
+title: Key Barriers for Women in Gaming
+source: "Rennick, S. & Roberts, S. G. (2025). 'Not Gamers, Just Women Who Play Video Games: A Survey of Women’s Attitudes to Mobile Games in the UK', *Sex Roles*."
+url: https://link.springer.com/article/10.1007/s11199-025-01612-3
+category: gender
 tags: [journal article, gender, collaboration, mobile games, players]
 ---
 
