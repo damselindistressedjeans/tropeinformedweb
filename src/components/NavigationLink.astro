@@ -16,30 +16,28 @@ const { title, url, current } = Astro.props;
 
 <style>
     li {
-        display: block;
-        line-height: 1rem;
-        font-size: var(--small-text);
-        font-weight: bold;
+        padding-left: 0;
     }
 
-    a {
-        border-bottom: 0.15rem solid var(--background-color);
-        color: var(--link-color);
+    a,
+    a:visited,
+    a:hover,
+    a:focus,
+    a:active {
+        border-bottom: 0.175rem solid var(--primary-transparent);
+        color: var(--primary);
         display: block;
-        height: 1.5rem;
-        padding: 0.25rem 0;
-        text-decoration: none;
+        font-size: var(--small);
+        font-weight: 700;
+        line-height: var(--large);
         transition: border-bottom-color var(--long);
     }
 
     a:hover,
     a:focus,
-    a:active {
-        border-bottom-color: var(--link-color);
-        transition: border-bottom-color var(--short);
-    }
-
+    a:active,
     .current {
-        border-bottom-color: var(--link-color);
+        border-bottom-color: var(--primary);
+        transition: border-bottom-color var(--short);
     }
 </style>
