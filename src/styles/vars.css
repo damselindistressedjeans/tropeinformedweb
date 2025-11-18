@@ -1,0 +1,52 @@
+:root {
+    /* colours */
+    --primary: hsl(334, 85%, 52%);
+    --primary-dark: hsl(334, 82%, 19%);
+    --primary-transparent: hsla(334, 85%, 52%, 0);
+
+    --secondary: hsl(178, 63%, 49%);
+    --secondary-dark: hsl(178, 85%, 26%);
+
+    --off-white: rgba(255, 255, 255, 0.85);
+    --off-black: rgba(0, 0, 0, 0.85);
+    --lighten: rgba(255, 255, 255, 0.15);
+    --lighten-more: rgba(255, 255, 255, 0.3);
+    --darken: rgba(0, 0, 0, 0.15);
+    --darken-more: rgba(0, 0, 0, 0.3);
+
+    --background: hsl(195, 95%, 97%);
+    --text: var(--off-black);
+    --faint: var(--darken-more);
+    --very-faint: var(--darken);
+
+    --link: hsl(195, 91%, 33%);
+    --visited: hsl(316, 32%, 49%);
+    --active: var(--primary);
+
+    /* sizes */
+    --tiny: 0.65rem;
+    --small: 0.8rem;
+    --medium: 1rem;
+    --large: 1.25rem;
+    --larger: 1.5625rem;
+    --largest: 2rem;
+    --huge: 2.5rem;
+
+    --max-width: 38rem;
+
+    /* durations */
+    --short: 100ms;
+    --long: 400ms;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: hsl(192, 15%, 9%);
+        --text: var(--off-white);
+        --faint: var(--lighten-more);
+        --very-faint: var(--lighten);
+
+        --link: hsl(195, 91%, 48%);
+        --visited: hsl(316, 32%, 55%);
+    }
+}
