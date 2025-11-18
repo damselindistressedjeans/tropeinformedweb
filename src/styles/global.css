@@ -8,6 +8,8 @@
     --primary-dark: hsl(334, 82%, 19%);
     --primary-transparent: hsla(334, 85%, 52%, 0);
 
+    --secondary: #2ececa;
+
     --off-white: rgba(255, 255, 255, 0.85);
     --off-black: rgba(0, 0, 0, 0.85);
     --lighten: rgba(255, 255, 255, 0.15);
@@ -200,4 +202,13 @@ sup {
 
 sub {
     top: 0.3rem;
+}
+
+.yt-embed {
+    aspect-ratio: 16 / 9;
+}
+
+.yt-embed iframe {
+    height: 100%;
+    width: 100%;
 }
