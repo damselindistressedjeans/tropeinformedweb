@@ -8,7 +8,8 @@
     --primary-dark: hsl(334, 82%, 19%);
     --primary-transparent: hsla(334, 85%, 52%, 0);
 
-    --secondary: #2ececa;
+    --secondary: hsl(178, 63%, 49%);
+    --secondary-dark: hsl(178, 85%, 26%);
 
     --off-white: rgba(255, 255, 255, 0.85);
     --off-black: rgba(0, 0, 0, 0.85);

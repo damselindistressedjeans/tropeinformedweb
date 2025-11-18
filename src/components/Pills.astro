@@ -1,0 +1,36 @@
+---
+import Pill from './Pill.astro';
+
+interface Props {
+    pills: { text: string; url?: string }[];
+}
+
+const { pills } = Astro.props;
+---
+
+{
+    pills.length ? (
+        <ul>
+            {pills.map(({ text, url }) => (
+                <li>
+                    <Pill text={text} url={url} />
+                </li>
+            ))}
+        </ul>
+    ) : null
+}
+
+<style>
+    ul {
+        display: flex;
+        gap: 0.25rem;
+        flex-wrap: wrap;
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    li {
+        padding-left: 0;
+    }
+</style>
