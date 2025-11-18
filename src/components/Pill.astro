@@ -1,0 +1,46 @@
+---
+interface Props {
+    text: string;
+    url?: string;
+}
+
+const { text, url } = Astro.props;
+
+//TODO styling when clickable link
+---
+
+{
+    url ? (
+        <a href={url} class="pill">
+            {text}
+        </a>
+    ) : (
+        <span class="pill">{text}</span>
+    )
+}
+
+<style>
+    .pill {
+        --text: var(--off-white);
+        background: var(--secondary);
+        color: var(--text);
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: var(--tiny);
+        font-weight: 700;
+        padding: 0.125rem 0.5rem;
+        border-radius: 2rem;
+        line-height: 1rem;
+    }
+
+    .pill:before {
+        content: '#';
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .pill {
+            background: var(--secondary-dark);
+        }
+    }
+</style>

@@ -12,6 +12,7 @@ const news = defineCollection({
         abstract: z.string(),
         date: z.date(),
         author: z.optional(z.string()),
+        tags: z.optional(z.array(z.string())),
     }),
 });
 
@@ -19,6 +20,13 @@ const findings = defineCollection({
     loader: glob({
         pattern: '*.md',
         base: './src/collections/findings',
+    }),
+    schema: z.object({
+        title: z.string(),
+        source: z.string(),
+        url: z.string(),
+        category: z.string(),
+        tags: z.optional(z.array(z.string())),
     }),
 });
 

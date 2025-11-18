@@ -18,13 +18,13 @@ items.sort((a, b) => {
 >
     <ul>
         {
-            items.map((item) => (
+            items.map(({ id, data: { title, date, abstract } }) => (
                 <li>
                     <ArticleLink
-                        date={item.data.date.toLocaleDateString('en-GB')}
-                        title={item.data.title}
-                        description={item.data.abstract}
-                        permalink={`./${item.id}/`}
+                        date={date.toLocaleDateString('en-GB')}
+                        title={title}
+                        description={abstract}
+                        permalink={`./${id}/`}
                     />
                 </li>
             ))
