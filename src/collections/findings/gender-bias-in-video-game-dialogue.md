@@ -13,7 +13,7 @@ A study led by [Stephanie Rennick](https://www.stir.ac.uk/people/1932673) at the
 <script>
 
 	function setupPiechart(){
-        var ctx = $("#chart-line");
+        var ctx = document.querySelector("#chart-line");
         var myLineChart = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -32,9 +32,7 @@ A study led by [Stephanie Rennick](https://www.stir.ac.uk/people/1932673) at the
         });
 	}
 
-    $(document).ready(function() {
-    	setupPiechart();
-    });
+    document.addEventListener('DOMContentLoaded', setupPiechart);
 </script>
 
 <canvas id="chart-line" class="chartjs-render-monitor" style="display: block; width: 672px; height: 336px;" height="420" width="840"></canvas>
