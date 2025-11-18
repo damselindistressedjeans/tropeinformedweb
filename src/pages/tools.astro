@@ -5,19 +5,46 @@ import Page from '../layouts/Page.astro';
 
 <Page
     title="Tools"
-    description="Tools produced by the Trope Informed team."
-    heading="Our tools"
+    description="Our tools for investigating tropes in games"
+    heading="Trope Informed Tools"
     currentArea="tools"
 >
     <Panel
         heading="The Video Game Dialogue Corpus"
         colour="blue"
-        cta={{ text: 'View the VGDC on Github', url: 'FOOBAR' }}
+        cta={{ text: 'View the VGDC on Github', url: 'https://github.com/seannyD/VideoGameDialogueCorpusPublic' }}
     >
         <p>
-            This is a panel displaying information about the <abbr
-                title="Video Game Dialogue Corpus">VGDC</abbr
-            >.
-        </p>
+            An open-source collection of dialogue from role-playing video games. <abbr title="Video Game Dialogue Corpus">VGDC</abbr> 1.0 contains 6.2 million words spoken by 13,000 characters from 50 video games. This is the largest collection of consistently coded dialogue in games that maps lines of dialogue to characters and branching choice structures. And it's growing all the time thanks to our collaborators.</p>
+        <p><a href="https://correlation-machine.com/VideoGameDialogueCorpus/VGDCGame.html" target="_blank">Play a game to learn more about VGDC</a></p>
+        <p><a href="findings/gender-bias-in-video-game-dialogue.html">Read about our findings</a></p>
+		<p><a href="https://github.com/seannyD/VideoGameDialogueCorpusPublic" target="_blank">Access the corpus repository</a></p>
+		<p>Want deeper access? Contact <a href="mailto:RobertsS55@cardiff.ac.uk">Seán Roberts</a></p>
     </Panel>
+    
+    <Panel
+        heading="Dialogue Explorer"
+        colour="green"
+        cta={{ text: 'Try our interactive demo!', url: 'https://correlation-machine.com/VideoGameDialogueCorpus/BG3Explorer/' }}
+    >
+        <p>
+            A tool for visualising branching dialogue from all the games in the Video Game Dialogue Corpus.
+        </p>
+        <p><a href="https://correlation-machine.com/VideoGameDialogueCorpus/BG3Explorer/" target="_blank">Try the Demo</a></p>
+    </Panel>
+    
+    
+    <Panel
+        heading="Tweexperiment"
+        colour="green"
+        cta={{ text: 'View Tweexperiment on Github', url: 'https://github.com/squeeglii/Tweexperiment' }}
+    >
+        <p>
+            A suite for running experiments on game dialogue. Tweexperiment allows you to write branching dialogue in Twine, then embed it in a website that handles within-participant conditions, survey administration,Ca and data logging. 
+        </p>
+        <p><a href="https://github.com/squeeglii/Tweexperiment" target="_blank">View Tweexperiment on Github</a></p>
+    </Panel>
+    
+    
+    
 </Page>
