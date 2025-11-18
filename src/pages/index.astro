@@ -1,7 +1,7 @@
 ---
+import Section from '@/components/Section.astro';
+import Home from '@/layouts/Home.astro';
 import { getCollection, render } from 'astro:content';
-import Section from '../components/Section.astro';
-import Home from '../layouts/Home.astro';
 
 const items = await getCollection('news');
 
@@ -14,7 +14,9 @@ const { Content } = await render(latest);
 ---
 
 <Home>
-    <p style="font-size: var(--huge); font-weight: 700; margin-bottom: 1rem;">We are Trope&nbsp;Informed.</p>
+    <p style="font-size: var(--huge); font-weight: 700; margin-bottom: 1rem;">
+        We are Trope&nbsp;Informed.
+    </p>
     <p>
         Here is the introductory paragraph about Trope Informed. It includes
         lots of information about the organisation and what they do. That's

@@ -1,6 +1,6 @@
 ---
-import type { Area } from '../types/Area';
-import Navigation from './Navigation.astro';
+import Navigation from '@/components/Navigation.astro';
+import type { Area } from '@/types/Area';
 
 interface Props {
     currentArea: Area;
@@ -83,7 +83,7 @@ const { currentArea } = Astro.props;
         border-bottom: none;
     }
 
-    a:hover ,
+    a:hover,
     a:focus,
     a:active {
         color: var(--primary);

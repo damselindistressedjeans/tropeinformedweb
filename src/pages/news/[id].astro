@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Pills from '../../components/Pills.astro';
-import Page from '../../layouts/Page.astro';
+import Pills from '@/components/Pills.astro';
+import Page from '@/layouts/Page.astro';
 
 export async function getStaticPaths() {
     const items = await getCollection('news');

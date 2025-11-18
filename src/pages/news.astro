@@ -1,7 +1,7 @@
 ---
+import ArticleLink from '@/components/ArticleLink.astro';
+import Page from '@/layouts/Page.astro';
 import { getCollection } from 'astro:content';
-import Page from '../layouts/Page.astro';
-import ArticleLink from '../components/ArticleLink.astro';
 
 const items = await getCollection('news');
 

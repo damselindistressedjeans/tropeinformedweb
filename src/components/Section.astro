@@ -1,6 +1,6 @@
 ---
-import type { CTA } from '../types/CTA';
-import Container from './Container.astro';
+import Container from '@/components/Container.astro';
+import type { CTA } from '@/types/CTA';
 
 interface Props {
     heading: string;
@@ -26,9 +26,17 @@ const colours = {
 </section>
 
 <style>
-    section {background: pink; padding: 4rem 0; margin-top: 4rem;}
-    section:nth-of-type(2n) {background: green;}
-    section + section {margin-top: 0;}
+    section {
+        background: pink;
+        padding: 4rem 0;
+        margin-top: 4rem;
+    }
+    section:nth-of-type(2n) {
+        background: green;
+    }
+    section + section {
+        margin-top: 0;
+    }
 
     /**
         If the last section is one of the non-coloured ones, and is
