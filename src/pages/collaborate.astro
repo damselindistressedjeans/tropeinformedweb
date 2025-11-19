@@ -1,4 +1,6 @@
 ---
+import Container from '@/components/Container.astro';
+import Panel from '@/components/Panel.astro';
 import Section from '@/components/Section.astro';
 import { constants } from '@/constants';
 import Page from '@/layouts/Page.astro';
@@ -40,7 +42,7 @@ const mailtoSteph = `mailto:${stephEmail}`;
                 >.
             </p>
         </Section>
-        <Section heading="Research Collaborations" color="rose">
+        <Section heading="Research Collaborations" color="none">
             <p>
                 If you or your company are looking for partners in new research
                 on video games, we’d be <a href={mailtoSteph}
@@ -52,39 +54,52 @@ const mailtoSteph = `mailto:${stephEmail}`;
                 also <a href="/tools/">explore our tools</a>.
             </p>
         </Section>
-        <Section heading="Consulting" color="turquoise">
+        <Section heading="Consulting" color="rose">
             <p>
                 If you are looking for input or advice concerning your next
                 project, we’re <a href={mailtoSteph}>only an email away</a>.
             </p>
         </Section>
-        <Section heading="About us" color="none" id="about">
-            <p>
-                Steph Rennick is a games researcher, philosopher, and lecturer
-                in interactive media at <a href={stephSite}
-                    >the University of Stirling</a
-                >. Seán Roberts is a quantitative linguist, games researcher,
-                and senior lecturer at <a href={seanSite}>Cardiff University</a
-                >.
-            </p>
-            <p>
-                Together, we co-created the <a href="/tools/#vgdc"
-                    >Video Game Dialogue Corpus</a
-                >, the first large-scale, openly accessible, consistently coded
-                corpus of video game dialogue, which we used to conduct the <a
-                    href="https://royalsocietypublishing.org/doi/full/10.1098/rsos.221095"
-                    >largest ever study of gender bias</a
-                > in character dialogue in games. We have developed <a
-                    href="https://gamestudies.org/2103/articles/rennick_roberts"
-                    >new methods</a
-                > and <a href="/tools/">tools</a> for studying games, and <a
-                    href="/findings/">our research</a
-                > has appeared in mainstream and gaming media internationally.
-            </p>
-            <p>
-                Our work aims to empower gamemakers to make informed choices
-                about representation, agency, and dialogue in their game design.
-            </p>
-        </Section>
+        <div>
+            <Container>
+                <Panel heading="About us" color="lavender" id="about">
+                    <p>
+                        Steph Rennick is a games researcher, philosopher, and
+                        lecturer in interactive media at <a href={stephSite}
+                            >the University of Stirling</a
+                        >. Seán Roberts is a quantitative linguist, games
+                        researcher, and senior lecturer at <a href={seanSite}
+                            >Cardiff University</a
+                        >.
+                    </p>
+                    <p>
+                        Together, we co-created the <a href="/tools/#vgdc"
+                            >Video Game Dialogue Corpus</a
+                        >, the first large-scale, openly accessible,
+                        consistently coded corpus of video game dialogue, which
+                        we used to conduct the <a
+                            href="https://royalsocietypublishing.org/doi/full/10.1098/rsos.221095"
+                            >largest ever study of gender bias</a
+                        > in character dialogue in games. We have developed <a
+                            href="https://gamestudies.org/2103/articles/rennick_roberts"
+                            >new methods</a
+                        > and <a href="/tools/">tools</a> for studying games, and
+                        <a href="/findings/">our research</a> has appeared in mainstream
+                        and gaming media internationally.
+                    </p>
+                    <p>
+                        Our work aims to empower gamemakers to make informed
+                        choices about representation, agency, and dialogue in
+                        their game design.
+                    </p>
+                </Panel>
+            </Container>
+        </div>
     </Fragment>
 </Page>
+
+<style>
+    div {
+        margin-top: 4rem;
+    }
+</style>
