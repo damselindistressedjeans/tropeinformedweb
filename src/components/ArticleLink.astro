@@ -27,7 +27,7 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
         </p>
         <h2>{title}</h2>
         <div set:html={marked.parse(description)} />
-        <p class="cta">Read more…</p>
+        <p class="cta">Read more</p>
         {
             tags ? (
                 <Pills
@@ -105,5 +105,9 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
 
     .cta {
         color: var(--razzmatazz);
+    }
+
+    .cta:after {
+        content: '…';
     }
 </style>
