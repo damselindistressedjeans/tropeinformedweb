@@ -13,7 +13,7 @@ interface Props {
 const { date, title, description, permalink, tags = ['news'] } = Astro.props;
 ---
 
-<a href={permalink} class="cerulean">
+<a href={permalink}>
     <article>
         <p class="date">
             {
@@ -45,12 +45,13 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
     a,
     a:visited {
         background: white;
-        border: 1px solid var(--very-faint);
+        border: none;
         border-radius: 2rem;
         box-shadow: 0 0 1rem -0.5rem rgba(0, 0, 0, 0.5);
         color: var(--text);
         display: block;
         padding: calc(2rem - 1px);
+        outline: 1px solid var(--very-faint);
         top: 0;
         transition:
             top var(--long),
@@ -60,7 +61,6 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
     a:hover,
     a:focus,
     a:active {
-        border-color: var(--very-faint);
         box-shadow: 0 0.25rem 1.25rem -0.75rem rgba(0, 0, 0, 0.25);
         color: var(--text);
         top: -0.25rem;
