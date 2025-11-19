@@ -18,13 +18,14 @@ items.sort((a, b) => {
 >
     <ul>
         {
-            items.map(({ id, data: { title, date, abstract } }) => (
+            items.map(({ id, data: { title, date, abstract, tags } }) => (
                 <li>
                     <ArticleLink
-                        date={date.toLocaleDateString('en-GB')}
+                        date={date}
                         title={title}
                         description={abstract}
                         permalink={`./${id}/`}
+                        tags={tags}
                     />
                 </li>
             ))
@@ -32,12 +33,14 @@ items.sort((a, b) => {
     </ul>
 </Page>
 
-<!-- <style>
+<style>
     ul {
         list-style-type: none;
+        padding-left: 0;
     }
 
     li {
-        margin-top: 1rem;
+        margin: 2rem 0;
+        padding-left: 0;
     }
-</style> -->
+</style>
