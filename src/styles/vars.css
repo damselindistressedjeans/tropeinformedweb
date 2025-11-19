@@ -8,6 +8,10 @@
     --cerulean-light: hsl(195, 89%, 78%);
     --cerulean-dark: hsl(195, 100%, 13%);
 
+    --lavender: hsl(258, 66%, 67%);
+    --lavender-light: hsl(258, 65%, 84%);
+    --lavender-dark: hsl(258, 43%, 25%);
+
     --rose: hsl(322, 77%, 62%);
     --rose-light: hsl(322, 93%, 84%);
     --rose-dark: hsl(322, 51%, 17%);
@@ -64,6 +68,12 @@
     --local: var(--cerulean);
     --local-light: var(--cerulean-light);
     --local-dark: var(--cerulean-dark);
+}
+
+.lavender {
+    --local: var(--lavender);
+    --local-light: var(--lavender-light);
+    --local-dark: var(--lavender-dark);
 }
 
 .rose {
