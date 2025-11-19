@@ -23,7 +23,7 @@ const mailtoSteph = `mailto:${stephEmail}`;
         detail of the ways you can collaborate with us comes below.
     </p>
     <Fragment slot={'sections'}>
-        <Section heading="Talks and Workshops">
+        <Section heading="Talks and Workshops" color="cerulean">
             <p>
                 We have run workshops for video game writers and producers, and
                 regularly give talks to both specialist and general audiences.
@@ -40,7 +40,7 @@ const mailtoSteph = `mailto:${stephEmail}`;
                 >.
             </p>
         </Section>
-        <Section heading="Research Collaborations">
+        <Section heading="Research Collaborations" color="rose">
             <p>
                 If you or your company are looking for partners in new research
                 on video games, we’d be <a href={mailtoSteph}
@@ -52,13 +52,13 @@ const mailtoSteph = `mailto:${stephEmail}`;
                 also <a href="/tools/">explore our tools</a>.
             </p>
         </Section>
-        <Section heading="Consulting">
+        <Section heading="Consulting" color="turquoise">
             <p>
                 If you are looking for input or advice concerning your next
                 project, we’re <a href={mailtoSteph}>only an email away</a>.
             </p>
         </Section>
-        <Section heading="About us" id="about">
+        <Section heading="About us" color="none" id="about">
             <p>
                 Steph Rennick is a games researcher, philosopher, and lecturer
                 in interactive media at <a href={stephSite}
@@ -86,5 +86,5 @@ const mailtoSteph = `mailto:${stephEmail}`;
                 about representation, agency, and dialogue in their game design.
             </p>
         </Section>
-    </Fragment></Page
->
+    </Fragment>
+</Page>
