@@ -8,9 +8,17 @@ interface Props {
     description: string;
     permalink: string;
     tags?: string[];
+    nested?: boolean;
 }
 
-const { date, title, description, permalink, tags = ['news'] } = Astro.props;
+const {
+    date,
+    title,
+    description,
+    permalink,
+    tags = ['news'],
+    nested,
+} = Astro.props;
 ---
 
 <a href={permalink}>
@@ -25,7 +33,7 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
                 })
             }
         </p>
-        <h2>{title}</h2>
+        {nested ? <h3 class="heading">{title}</h3> : <h2 class="heading">{title}</h2>}
         <div set:html={marked.parse(description)} />
         <p class="cta">Read more</p>
         {
@@ -70,9 +78,9 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
             box-shadow var(--short);
     }
 
-    a:hover h2,
-    a:focus h2,
-    a:active h2 {
+    a:hover .heading,
+    a:focus .heading,
+    a:active .heading {
         color: var(--razzmatazz);
         transition: color var(--short);
     }
@@ -91,7 +99,7 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
         }
     }
 
-    h2 {
+    .heading {
         font-size: var(--large);
         line-height: 1.5;
         margin-top: 0;
