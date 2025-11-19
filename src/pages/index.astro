@@ -1,4 +1,5 @@
 ---
+import ArticleLink from '@/components/ArticleLink.astro';
 import Section from '@/components/Section.astro';
 import Home from '@/layouts/Home.astro';
 import { getCollection, render } from 'astro:content';
@@ -9,8 +10,10 @@ items.sort((a, b) => {
     return a.id < b.id ? 1 : -1;
 });
 
-const latest = items[0];
-const { Content } = await render(latest);
+const {
+    id,
+    data: { title, date, abstract, tags },
+} = items[0];
 ---
 
 <Home>
@@ -78,9 +81,15 @@ const { Content } = await render(latest);
                 text: 'All news',
                 url: '/news/',
             }}
+            color="cerulean"
         >
-            <h3>{latest.data.title}</h3>
-            <Content />
+            <ArticleLink
+                date={date}
+                title={title}
+                description={abstract}
+                permalink={`./${id}/`}
+                tags={tags}
+            />
         </Section>
     </Fragment>
 </Home>
