@@ -9,6 +9,7 @@ interface Props {
     cta?: CTA;
     id?: string;
     color: Color | 'none';
+    border: boolean;
 }
 
 const {
@@ -16,10 +17,11 @@ const {
     cta = { text: 'This is the call to action', url: '.' },
     id,
     color,
+    border,
 } = Astro.props;
 ---
 
-<section class={color} id={id}>
+<section class:list={[color, { border }]} id={id}>
     <Container>
         <h2>{heading}</h2>
         <slot />
@@ -36,6 +38,14 @@ const {
 
     section + section {
         margin-top: 0;
+    }
+
+    .border {
+        border-top: 1px solid var(--very-faint);
+    }
+
+    .none {
+        background: var(--background);
     }
 
     .none:last-of-type {
