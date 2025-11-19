@@ -1,6 +1,6 @@
+import { constants } from '@/constants.ts';
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { constants } from '../constants.ts';
 import { marked } from 'marked';
 import sanitizeHtml from 'sanitize-html';
 

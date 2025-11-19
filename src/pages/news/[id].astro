@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Pills from '../../components/Pills.astro';
-import Page from '../../layouts/Page.astro';
+import Pills from '@/components/Pills.astro';
+import Page from '@/layouts/Page.astro';
 
 export async function getStaticPaths() {
     const items = await getCollection('news');
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 const { Content } = await render(item);
 
-const { title, description, date, author, tags } = item.data;
+const { title, description, date, author, tags = ['news'] } = item.data;
 ---
 
 <Page
@@ -34,7 +34,16 @@ const { title, description, date, author, tags } = item.data;
                 })
             }{author ? ` by ${author}` : null}
         </p>
-        {tags ? <Pills pills={tags.map((tag) => ({ text: tag }))} /> : null}
+        {
+            tags ? (
+                <Pills
+                    pills={tags.sort().map((tag, i) => ({
+                        text: tag,
+                        color: 'turquoise',
+                    }))}
+                />
+            ) : null
+        }
     </div>
     <Content />
 </Page>

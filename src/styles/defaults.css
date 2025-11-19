@@ -1,0 +1,33 @@
+:root {
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    position: relative;
+    text-wrap: pretty;
+}
+
+*:first-child {
+    margin-top: 0;
+}
+
+*:last-child {
+    margin-bottom: 0;
+}
+
+main,
+header,
+footer,
+nav,
+section,
+aside {
+    display: block;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

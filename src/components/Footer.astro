@@ -1,6 +1,6 @@
 ---
-import Container from './Container.astro';
-import { constants } from '../constants';
+import Container from '@/components/Container.astro';
+import { constants } from '@/constants';
 
 const year = new Date().getFullYear();
 
@@ -54,7 +54,7 @@ const {
         --faint: var(--lighten-more);
         --very-faint: var(--lighten);
         --text: var(--off-white);
-        background: var(--primary);
+        background: var(--razzmatazz);
         border-radius: 2rem 2rem 0 0;
         color: var(--text);
         font-size: var(--small);
@@ -64,7 +64,7 @@ const {
 
     @media (prefers-color-scheme: dark) {
         footer {
-            background: var(--primary-dark);
+            background: var(--razzmatazz-dark);
         }
     }
 
@@ -105,7 +105,7 @@ const {
     }
 
     .copyright {
-        border-top: 0.0625rem solid var(--off-white);
+        border-top: 1px solid var(--off-white);
         font-size: var(--tiny);
         margin-top: 2rem;
         padding: 0.5rem 0 0;

@@ -1,0 +1,8 @@
+.yt-embed {
+    aspect-ratio: 16 / 9;
+}
+
+.yt-embed iframe {
+    height: 100%;
+    width: 100%;
+}
