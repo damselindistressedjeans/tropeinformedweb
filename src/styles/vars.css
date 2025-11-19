@@ -1,11 +1,20 @@
 :root {
     /* colours */
-    --primary: hsl(334, 85%, 52%);
-    --primary-dark: hsl(334, 82%, 19%);
-    --primary-transparent: hsla(334, 85%, 52%, 0);
+    --razzmatazz: hsl(334, 85%, 52%);
+    --razzmatazz-dark: hsl(334, 82%, 15%);
+    --razzmatazz-transparent: hsla(334, 85%, 52%, 0);
 
-    --secondary: hsl(178, 63%, 49%);
-    --secondary-dark: hsl(178, 85%, 26%);
+    --cerulean: hsl(195, 100%, 49%);
+    --cerulean-light: hsl(195, 89%, 78%);
+    --cerulean-dark: hsl(195, 100%, 13%);
+
+    --rose: hsl(322, 77%, 62%);
+    --rose-light: hsl(322, 93%, 84%);
+    --rose-dark: hsl(322, 51%, 17%);
+
+    --turquoise: hsl(178, 63%, 49%);
+    --turquoise-light: hsl(178, 90%, 81%);
+    --turquoise-dark: hsl(178, 93%, 11%);
 
     --off-white: rgba(255, 255, 255, 0.85);
     --off-black: rgba(0, 0, 0, 0.85);
@@ -21,7 +30,7 @@
 
     --link: hsl(195, 91%, 33%);
     --visited: hsl(316, 32%, 49%);
-    --active: var(--primary);
+    --active: var(--razzmatazz);
 
     /* sizes */
     --tiny: 0.65rem;
@@ -49,4 +58,22 @@
         --link: hsl(195, 91%, 48%);
         --visited: hsl(316, 32%, 55%);
     }
+}
+
+.cerulean {
+    --local: var(--cerulean);
+    --local-light: var(--cerulean-light);
+    --local-dark: var(--cerulean-dark);
+}
+
+.rose {
+    --local: var(--rose);
+    --local-light: var(--rose-light);
+    --local-dark: var(--rose-dark);
+}
+
+.turquoise {
+    --local: var(--turquoise);
+    --local-light: var(--turquoise-light);
+    --local-dark: var(--turquoise-dark);
 }
