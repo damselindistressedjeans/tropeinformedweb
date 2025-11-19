@@ -13,12 +13,14 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 const { Content } = await render(item);
 
-const { title, description, date, author } = item.data;
+const { title } = item.data;
+
+//TODO this needs updated to handle description... anything else?
 ---
 
 <Page
     title={title}
-    description={description}
+    description={'Read about our research'}
     heading={title}
     currentArea="findings"
 >
