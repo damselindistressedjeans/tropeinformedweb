@@ -46,7 +46,7 @@ items.sort((a, b) => {
                         <Panel heading={title} color="none" id={id}>
                             <Content />
                             <div class="permalink">
-                                <a href={`/findings/${id}/`} class="permalink">
+                                <a href={`/findings/${id}/`}>
                                     Permalink for ‘{title}’
                                 </a>
                             </div>
@@ -72,13 +72,15 @@ items.sort((a, b) => {
     }
 
     .permalink {
-        text-align: right;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 2rem;
     }
 
     .permalink a {
-        display: inline-block;
+        display: block;
         font-size: var(--small);
-        margin-top: 2rem;
+        text-align: right;
     }
 
     .permalink a:before {
