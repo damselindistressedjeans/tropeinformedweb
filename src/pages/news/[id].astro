@@ -40,6 +40,10 @@ const { title, description, date, author, tags = ['news'] } = item.data;
                     pills={tags.sort().map((tag, i) => ({
                         text: tag,
                         color: 'turquoise',
+                        url:
+                            tag === 'news'
+                                ? '/news/'
+                                : `/news/tags/${tag.replaceAll(' ', '-')}/`,
                     }))}
                 />
             ) : null

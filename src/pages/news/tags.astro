@@ -1,0 +1,27 @@
+---
+import Pills from '@/components/Pills.astro';
+import Page from '@/layouts/Page.astro';
+
+import { getCollection } from 'astro:content';
+
+const items = await getCollection('news');
+
+const tags = Array.from(
+    new Set(items.map(({ data: { tags } }) => (tags ? tags : [])).flat()),
+).sort();
+---
+
+<Page
+    title="Tags"
+    heading="All news tags"
+    currentArea="news"
+    description="View all news item tags"
+>
+    <Pills
+        pills={tags.map((tag) => ({
+            text: tag,
+            color: 'turquoise',
+            url: `/news/tags/${tag.replaceAll(' ', '-')}/`,
+        }))}
+    />
+</Page>
