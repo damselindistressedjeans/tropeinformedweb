@@ -1,8 +1,9 @@
 ---
 import Pill from '@/components/Pill.astro';
+import type { Color } from '@/types/Color';
 
 interface Props {
-    pills: { text: string; url?: string }[];
+    pills: { text: string; color: Color; url?: string }[];
 }
 
 const { pills } = Astro.props;
@@ -11,9 +12,9 @@ const { pills } = Astro.props;
 {
     pills.length ? (
         <ul>
-            {pills.map(({ text, url }) => (
+            {pills.map(({ text, color, url }) => (
                 <li>
-                    <Pill text={text} url={url} />
+                    <Pill text={text} color={color} url={url} />
                 </li>
             ))}
         </ul>

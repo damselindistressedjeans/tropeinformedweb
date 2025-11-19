@@ -1,46 +1,61 @@
 ---
+import type { Color } from '@/types/Color';
+
 interface Props {
     text: string;
+    color: Color;
     url?: string;
 }
 
-const { text, url } = Astro.props;
+const { text, color, url } = Astro.props;
 
-//TODO styling when clickable link
+const classes = ['pill', color];
 ---
 
 {
     url ? (
-        <a href={url} class="pill">
+        <a href={url} class:list={classes}>
             {text}
         </a>
     ) : (
-        <span class="pill">{text}</span>
+        <span class:list={classes}>{text}</span>
     )
 }
 
 <style>
     .pill {
         --text: var(--off-white);
-        background: var(--secondary);
+        background: var(--local);
+        border: none;
+        border-radius: 2rem;
         color: var(--text);
         display: block;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
         font-size: var(--tiny);
         font-weight: 700;
-        padding: 0.125rem 0.5rem;
-        border-radius: 2rem;
+        letter-spacing: 0.05em;
         line-height: 1rem;
+        padding: 0.125rem 0.5rem;
+        text-transform: uppercase;
     }
 
     .pill:before {
         content: '#';
     }
 
+    a.pill {
+        transition: background-color var(--long);
+    }
+
+    a.pill:hover,
+    a.pill:focus,
+    a.pill:active {
+        background: var(--razzmatazz);
+        transition: background-color var(--short);
+    }
+
     @media (prefers-color-scheme: dark) {
         .pill {
-            background: var(--secondary-dark);
+            background: var(--local-dark);
         }
     }
 </style>
