@@ -1,3 +1,7 @@
+:root {
+    scroll-behavior: smooth;
+}
+
 *,
 *:before,
 *:after {
@@ -21,4 +25,9 @@ nav,
 section,
 aside {
     display: block;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
