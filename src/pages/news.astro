@@ -13,7 +13,7 @@ items.sort((a, b) => {
 <Page
     title="News"
     description="The latest news from the Trope Informed team."
-    heading="Latest news"
+    heading="All news"
     currentArea="news"
 >
     <ul>
@@ -24,7 +24,7 @@ items.sort((a, b) => {
                         date={date}
                         title={title}
                         description={abstract}
-                        permalink={`./${id}/`}
+                        permalink={`/news/${id}/`}
                         tags={tags}
                     />
                 </li>
