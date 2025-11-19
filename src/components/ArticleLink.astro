@@ -69,6 +69,13 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
             box-shadow var(--short);
     }
 
+    a:hover h2,
+    a:focus h2,
+    a:active h2 {
+        color: var(--razzmatazz);
+        transition: color var(--short);
+    }
+
     @media (prefers-color-scheme: dark) {
         a,
         a:visited {
@@ -87,6 +94,7 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
         font-size: var(--large);
         line-height: 1.5;
         margin-top: 0;
+        transition: color var(--long);
     }
 
     .date {
