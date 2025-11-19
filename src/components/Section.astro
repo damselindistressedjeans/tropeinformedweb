@@ -2,6 +2,7 @@
 import Container from '@/components/Container.astro';
 import type { Color } from '@/types/Color';
 import type { CTA } from '@/types/CTA';
+import CallToAction from '@/components/CallToAction.astro';
 
 interface Props {
     heading: string;
@@ -22,13 +23,7 @@ const {
     <Container>
         <h2>{heading}</h2>
         <slot />
-        {
-            cta && (
-                <div>
-                    <a href={cta.url}>{cta.text}</a>
-                </div>
-            )
-        }
+        {cta ? <CallToAction cta={cta} /> : null}
     </Container>
 </section>
 
