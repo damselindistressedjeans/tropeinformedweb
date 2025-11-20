@@ -5,7 +5,7 @@ export const constants = {
         mailingListUrl: '', //TODO what is this?
         feed: {
             title: 'Trope Informed News',
-            description: 'Latest news from the Trope Informed Team',
+            description: 'The latest news from Trope Informed',
             defaultAuthor: 'The Trope Informed Team',
             site: 'https://www.tropeinformed.com',
             permalinkBase: 'news',
