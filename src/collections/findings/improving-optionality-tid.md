@@ -1,5 +1,6 @@
 ---
 title: Improving Optionality
+description: Rennick and Roberts undertook research into dialogue optionality in RPGs and suggest ways of expanding and improving dialogue systems. 
 source: "Rennick, S. & Roberts, S. G. (2025), 'Improving optionality in video game dialogue with Trope-Informed Design', *Game Studies*."
 url: https://gamestudies.org/2502/articles/rennick_roberts_improving_optionality
 category: optionality
