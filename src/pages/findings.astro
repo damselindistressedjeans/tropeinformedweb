@@ -1,6 +1,7 @@
 ---
 import Container from '@/components/Container.astro';
 import Panel from '@/components/Panel.astro';
+import { constants } from '@/constants';
 import Page from '@/layouts/Page.astro';
 import { getCollection, render } from 'astro:content';
 
@@ -9,6 +10,8 @@ const items = await getCollection('findings');
 items.sort((a, b) => {
     return a.data.title > b.data.title ? 1 : -1;
 });
+
+const email = constants.contacts.steph.email;
 ---
 
 <Page
@@ -18,8 +21,20 @@ items.sort((a, b) => {
     currentArea="findings"
 >
     <p>
-        Here you can read an overview of some of our key findings. Please enjoy
-        perusing and learning.
+        Here you can find an overview of some of our research, including our
+        work on <a href="#gender-bias-in-video-game-dialogue"
+            >gender bias in Video Game Dialogue</a
+        >, <a href="#improving-optionality-tid">improving optionality</a> to enhance
+        player agency, and the <a href="#trope-informed-design"
+            >method that gave us our name</a
+        >. Our research is informed by the needs of game makers, and sometimes
+        in direct collaboration, as with our examination of <a
+            href="#key-barriers-for-women-in-gaming"
+            >key barriers for women in gaming</a
+        >. If you'd like to <a href="/collaborate/">collaborate with us</a>
+        on future research, we’d love to <a href={`mailto:${email}`}
+            >hear from you</a
+        >.
     </p>
     <nav>
         <h2 class="visually-hidden">Jump to section</h2>

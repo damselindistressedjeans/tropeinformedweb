@@ -21,11 +21,15 @@ const mailtoSteph = `mailto:${stephEmail}`;
     currentArea="collaborate"
 >
     <p>
-        Here's an introductory passage for the collaboration page. All the
-        detail of the ways you can collaborate with us comes below.
+        Whether you’re an indie developer, an established games company, an
+        academic, or interested in our work for other reasons, we want to work
+        with you! Here you can find out more information <a href="#about"
+            >about us</a
+        > and how we can help you make the games you want to make. If you have any
+        questions, don’t hesitate to <a href={mailtoSteph}>get in touch</a>.
     </p>
     <Fragment slot={'sections'}>
-        <Section heading="Talks and Workshops" color="cerulean">
+        <Section heading="Talks and Workshops" color="rose">
             <p>
                 We have run workshops for video game writers and producers, and
                 regularly give talks to both specialist and general audiences.
@@ -54,7 +58,7 @@ const mailtoSteph = `mailto:${stephEmail}`;
                 also <a href="/tools/">explore our tools</a>.
             </p>
         </Section>
-        <Section heading="Consulting" color="rose">
+        <Section heading="Consulting" color="cerulean">
             <p>
                 If you are looking for input or advice concerning your next
                 project, we’re <a href={mailtoSteph}>only an email away</a>.
