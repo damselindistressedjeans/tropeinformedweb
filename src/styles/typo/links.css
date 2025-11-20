@@ -1,0 +1,18 @@
+a {
+    border-bottom: 1px solid var(--faint);
+    color: var(--link);
+    transition: border-color var(--long), color var(--long);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--visited);
+}
+
+a:hover,
+a:focus,
+a:active {
+    border-bottom-color: var(--text);
+    color: var(--active);
+    transition: border-color var(--short), color var(--short);
+}

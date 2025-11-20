@@ -1,0 +1,36 @@
+---
+import { constants } from '@/constants';
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+const { title: siteTitle, description: defaultDescription } = constants.meta;
+const { title: feedTitle } = constants.meta.feed;
+---
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
+    <meta
+        name="description"
+        content={description ? description : defaultDescription}
+    />
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="/favicon.ico"
+        sizes="16x16 32x32 48x48 64x64 128x128 144x144 192x192"
+    />
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        href="/feed.xml"
+        title={feedTitle}
+    />
+</head>

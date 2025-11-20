@@ -1,0 +1,133 @@
+---
+import Container from '@/components/Container.astro';
+import { constants } from '@/constants';
+
+const year = new Date().getFullYear();
+
+const {
+    meta: { mailingListUrl },
+    contacts: {
+        steph: { email },
+    },
+} = constants;
+---
+
+<Container>
+    <footer role="contentinfo">
+        <div class="columns">
+            <nav>
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news/">News</a></li>
+                    <li><a href="/findings/">Findings</a></li>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/collaborate/">Collaborate</a></li>
+                    <li><a href="/collaborate/#about">About us</a></li>
+                </ul>
+            </nav>
+            <section>
+                <h2>Keep in touch</h2>
+                <ul>
+                    <li>
+                        <a href={`mailto:${email}`}>Contact us</a>
+                    </li>
+                    <li>
+                        <a href={mailingListUrl}
+                            >Subscribe to our mailing list</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/feed.xml">Subscribe via RSS</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <p class="copyright">
+            © {year === 2025 ? year : `2025-${year}`} Trope Informed
+        </p>
+    </footer>
+</Container>
+
+<style>
+    footer {
+        --faint: var(--lighten-more);
+        --very-faint: var(--lighten);
+        --text: var(--off-white);
+        background: var(--razzmatazz);
+        border-radius: 2rem 2rem 0 0;
+        color: var(--text);
+        font-size: var(--small);
+        padding: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        footer {
+            background: var(--razzmatazz-dark);
+        }
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+
+    nav,
+    section {
+        flex-grow: 1;
+    }
+
+    h2 {
+        font-size: var(--tiny);
+        margin: 0 0 1rem;
+        text-transform: uppercase;
+    }
+
+    a,
+    a:visited,
+    a:hover,
+    a:focus,
+    a:active {
+        color: var(--off-white);
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        padding: 0.125rem 0;
+    }
+
+    .copyright {
+        border-top: 1px solid var(--off-white);
+        font-size: var(--tiny);
+        margin-top: 2rem;
+        padding: 0.5rem 0 0;
+        text-align: right;
+    }
+
+    @media (min-width: 25rem) {
+        .columns {
+            flex-direction: row;
+        }
+    }
+
+    @media (min-width: 32rem) {
+        nav {
+            flex-grow: 0;
+        }
+
+        nav ul {
+            column-count: 2;
+        }
+
+        section {
+            max-width: 50%;
+        }
+    }
+</style>

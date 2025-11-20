@@ -1,0 +1,28 @@
+---
+import Page from '@/layouts/Page.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const items = await getCollection('findings');
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+
+const { title } = item.data;
+
+//TODO this needs updated to handle description... anything else?
+---
+
+<Page
+    title={title}
+    description={'Read about our research'}
+    heading={title}
+    currentArea="findings"
+>
+    <Content />
+</Page>

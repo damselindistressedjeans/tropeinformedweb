@@ -1,0 +1,61 @@
+---
+import ArticleLink from '@/components/ArticleLink.astro';
+import Page from '@/layouts/Page.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const items = await getCollection('news');
+    const tags = Array.from(
+        new Set(items.map(({ data: { tags } }) => (tags ? tags : [])).flat()),
+    );
+    return tags.map((tag) => ({
+        params: { tag: tag.replaceAll(' ', '-') },
+        props: { tag },
+    }));
+}
+
+const { tag } = Astro.props;
+
+const items = await getCollection('news');
+
+const filtered = items
+    .filter(({ data: { tags } }) => tags && tags.indexOf(tag) > -1)
+    .sort((a, b) => {
+        return a.id < b.id ? 1 : -1;
+    });
+---
+
+<Page
+    title=`News tagged '${tag}'`
+    description=`All news tagged as '${tag}'`
+    heading=`News tagged ‘${tag}’`
+    currentArea="news"
+>
+    <ul>
+        {
+            filtered.map(({ id, data: { title, date, abstract, tags } }) => (
+                <li>
+                    <ArticleLink
+                        date={date}
+                        title={title}
+                        description={abstract}
+                        permalink={`/news/${id}/`}
+                        tags={tags}
+                    />
+                </li>
+            ))
+        }
+    </ul>
+</Page>
+
+<style>
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        margin: 2rem 0;
+        padding-left: 0;
+    }
+</style>

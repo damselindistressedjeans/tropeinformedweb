@@ -1,0 +1,49 @@
+---
+import type { CTA } from '@/types/CTA';
+import type { Color } from '@/types/Color';
+import CallToAction from './CallToAction.astro';
+
+interface Props {
+    heading: string;
+    cta?: CTA;
+    id?: string;
+    color: Color | 'none';
+    nested?: boolean;
+}
+
+const { heading, cta, id, color, nested } = Astro.props;
+---
+
+<section class={color} id={id}>
+    {nested ? <h3>{heading}</h3> : <h2>{heading}</h2>}
+    <slot />
+    {cta ? <CallToAction cta={cta} /> : null}
+</section>
+
+<style>
+    section {
+        background: var(--local-light);
+        border-radius: 2rem;
+        corner-shape: squircle;
+        margin: 4rem 0;
+        padding: 2rem;
+    }
+
+    section:first-child {
+        margin-top: 0;
+    }
+
+    section:last-child {
+        margin-bottom: 0;
+    }
+
+    .none {
+        background: var(--background);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        section {
+            background: var(--local-dark);
+        }
+    }
+</style>

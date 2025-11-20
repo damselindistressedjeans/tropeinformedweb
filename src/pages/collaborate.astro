@@ -1,0 +1,109 @@
+---
+import Container from '@/components/Container.astro';
+import Panel from '@/components/Panel.astro';
+import Section from '@/components/Section.astro';
+import { constants } from '@/constants';
+import Page from '@/layouts/Page.astro';
+
+const { mailingListUrl } = constants.meta;
+const {
+    sean: { email: seanEmail, site: seanSite },
+    steph: { email: stephEmail, site: stephSite },
+} = constants.contacts;
+
+const mailtoSteph = `mailto:${stephEmail}`;
+---
+
+<Page
+    title="Collaborate"
+    description="Learn about how Trope Informed can help you"
+    heading="Collaborate with us"
+    currentArea="collaborate"
+>
+    <p>
+        Whether you’re an indie developer, an established games company, an
+        academic, or interested in our work for other reasons, we want to work
+        with you! Here you can find out more information <a href="#about"
+            >about us</a
+        > and how we can help you make the games you want to make. If you have any
+        questions, don’t hesitate to <a href={mailtoSteph}>get in touch</a>.
+    </p>
+    <Fragment slot={'sections'}>
+        <Section heading="Talks and Workshops" color="rose">
+            <p>
+                We have run workshops for video game writers and producers, and
+                regularly give talks to both specialist and general audiences.
+                Topics include (but are not limited to) gender representation,
+                optionality and agency, ethics in games, and writing more
+                realistic dialogue.
+            </p>
+            <p>
+                Contact <a href={mailtoSteph}>Steph</a> or <a
+                    href=`mailto:${seanEmail}`>Seán</a
+                > to organise a talk for your company, university, or event. If you’d
+                like to attend more of our events, <a href={mailingListUrl}
+                    >sign up for our mailing list</a
+                >.
+            </p>
+        </Section>
+        <Section heading="Research Collaborations" color="none">
+            <p>
+                If you or your company are looking for partners in new research
+                on video games, we’d be <a href={mailtoSteph}
+                    >delighted to chat with you</a
+                >. You can <a
+                    href="https://theconversation.com/nearly-a-third-of-female-gamers-feel-guilty-about-their-hobby-new-study-263752"
+                    >read about our recent study on women’s attitudes to gaming</a
+                > for an example of work undertaken with a games company. You can
+                also <a href="/tools/">explore our tools</a>.
+            </p>
+        </Section>
+        <Section heading="Consulting" color="cerulean">
+            <p>
+                If you are looking for input or advice concerning your next
+                project, we’re <a href={mailtoSteph}>only an email away</a>.
+            </p>
+        </Section>
+        <div>
+            <Container>
+                <Panel heading="About us" color="lavender" id="about">
+                    <p>
+                        Steph Rennick is a games researcher, philosopher, and
+                        lecturer in interactive media at <a href={stephSite}
+                            >the University of Stirling</a
+                        >. Seán Roberts is a quantitative linguist, games
+                        researcher, and senior lecturer at <a href={seanSite}
+                            >Cardiff University</a
+                        >.
+                    </p>
+                    <p>
+                        Together, we co-created the <a href="/tools/#vgdc"
+                            >Video Game Dialogue Corpus</a
+                        >, the first large-scale, openly accessible,
+                        consistently coded corpus of video game dialogue, which
+                        we used to conduct the <a
+                            href="https://royalsocietypublishing.org/doi/full/10.1098/rsos.221095"
+                            >largest ever study of gender bias</a
+                        > in character dialogue in games. We have developed <a
+                            href="https://gamestudies.org/2103/articles/rennick_roberts"
+                            >new methods</a
+                        > and <a href="/tools/">tools</a> for studying games, and
+                        <a href="/findings/">our research</a> has appeared in mainstream
+                        and gaming media internationally.
+                    </p>
+                    <p>
+                        Our work aims to empower gamemakers to make informed
+                        choices about representation, agency, and dialogue in
+                        their game design.
+                    </p>
+                </Panel>
+            </Container>
+        </div>
+    </Fragment>
+</Page>
+
+<style>
+    div {
+        margin-top: 4rem;
+    }
+</style>

@@ -1,0 +1,66 @@
+---
+import { getCollection, render } from 'astro:content';
+import Pills from '@/components/Pills.astro';
+import Page from '@/layouts/Page.astro';
+
+export async function getStaticPaths() {
+    const items = await getCollection('news');
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+
+const { title, description, date, author, tags = ['news'] } = item.data;
+---
+
+<Page
+    title={title}
+    description={description}
+    heading={title}
+    currentArea="news"
+>
+    <div class="meta">
+        <p>
+            Published {
+                date.toLocaleDateString('en-GB', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                })
+            }{author ? ` by ${author}` : null}
+        </p>
+        {
+            tags ? (
+                <Pills
+                    pills={tags.sort().map((tag, i) => ({
+                        text: tag,
+                        color: 'turquoise',
+                        url:
+                            tag === 'news'
+                                ? '/news/'
+                                : `/news/tags/${tag.replaceAll(' ', '-')}/`,
+                    }))}
+                />
+            ) : null
+        }
+    </div>
+    <Content />
+</Page>
+
+<style>
+    .meta {
+        border-bottom: 1px solid var(--very-faint);
+        border-top: 1px solid var(--very-faint);
+        font-size: var(--small);
+        padding: 0.25rem 0 0.5rem;
+    }
+
+    .meta p {
+        margin-bottom: 0.25rem;
+    }
+</style>

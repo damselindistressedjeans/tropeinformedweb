@@ -1,0 +1,127 @@
+---
+import { marked } from 'marked';
+import Pills from './Pills.astro';
+
+interface Props {
+    date: Date;
+    title: string;
+    description: string;
+    permalink: string;
+    tags?: string[];
+    nested?: boolean;
+}
+
+const {
+    date,
+    title,
+    description,
+    permalink,
+    tags = ['news'],
+    nested,
+} = Astro.props;
+---
+
+<a href={permalink}>
+    <article>
+        <p class="date">
+            {
+                date.toLocaleDateString('en-GB', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                })
+            }
+        </p>
+        {
+            nested ? (
+                <h3 class="heading">{title}</h3>
+            ) : (
+                <h2 class="heading">{title}</h2>
+            )
+        }
+        <div set:html={marked.parse(description)} />
+        <p class="cta">Read more</p>
+        {
+            tags ? (
+                <Pills
+                    pills={tags.sort().map((tag) => ({
+                        text: tag,
+                        color: 'turquoise',
+                    }))}
+                />
+            ) : null
+        }
+    </article>
+</a>
+
+<style>
+    a,
+    a:visited {
+        background: var(--off-white);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0 0 1rem -0.5rem rgba(0, 0, 0, 0.5);
+        color: var(--text);
+        corner-shape: squircle;
+        display: block;
+        padding: 2rem;
+        outline: 1px solid var(--very-faint);
+        top: 0;
+        transition:
+            top var(--long),
+            box-shadow var(--long);
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        box-shadow: 0 0.25rem 1.25rem -0.75rem rgba(0, 0, 0, 0.25);
+        color: var(--text);
+        top: -0.25rem;
+        transition:
+            top var(--short),
+            box-shadow var(--short);
+    }
+
+    a:hover .heading,
+    a:focus .heading,
+    a:active .heading {
+        color: var(--razzmatazz);
+        transition: color var(--short);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        a,
+        a:visited {
+            background: var(--off-black);
+            box-shadow: 0 0 1rem -0.5rem rgba(255, 255, 255, 0.125);
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            box-shadow: 0 0.25rem 1.25rem -0.75rem rgba(255, 255, 255, 0.0625);
+        }
+    }
+
+    .heading {
+        font-size: var(--large);
+        line-height: 1.5;
+        margin-top: 0;
+        transition: color var(--long);
+    }
+
+    .date {
+        color: var(--faint);
+        font-size: var(--small);
+    }
+
+    .cta {
+        color: var(--razzmatazz);
+    }
+
+    .cta:after {
+        content: '…';
+    }
+</style>

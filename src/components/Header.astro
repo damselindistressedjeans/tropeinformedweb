@@ -1,0 +1,91 @@
+---
+import Navigation from '@/components/Navigation.astro';
+import type { Area } from '@/types/Area';
+
+interface Props {
+    currentArea: Area;
+}
+
+const { currentArea } = Astro.props;
+---
+
+<header role="banner">
+    <a href="/" class="logo">
+        {
+            currentArea === 'home' ? (
+                <h1>TROPE_INFORMED</h1>
+            ) : (
+                <span class="title">TROPE_INFORMED</span>
+            )
+        }
+    </a>
+    <Navigation
+        currentArea={currentArea}
+        items={[
+            {
+                title: 'News',
+                url: '/news/',
+                area: 'news',
+            },
+            {
+                title: 'Findings',
+                url: '/findings/',
+                area: 'findings',
+            },
+            {
+                title: 'Tools',
+                url: '/tools/',
+                area: 'tools',
+            },
+            {
+                title: 'Collaborate',
+                url: '/collaborate/',
+                area: 'collaborate',
+            },
+        ]}
+    />
+</header>
+
+<style>
+    header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 1rem 0;
+    }
+
+    @media (min-width: 40rem) {
+        header {
+            flex-direction: row;
+            justify-content: space-between;
+            padding-top: 0;
+        }
+    }
+
+    h1,
+    .title {
+        display: block;
+        font-size: var(--large);
+        font-weight: 900;
+        line-height: var(--huge);
+        margin: 0;
+    }
+
+    h1:after,
+    .title:after {
+        content: ':';
+        top: -0.1rem;
+    }
+
+    a,
+    a:visited {
+        color: var(--text);
+        border-bottom: none;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        color: var(--razzmatazz);
+    }
+</style>

@@ -1,0 +1,30 @@
+ol,
+ul {
+    padding-left: 1.15rem;
+}
+
+li {
+    padding-left: 0.85rem;
+}
+
+blockquote {
+    border-left: 0.5rem solid var(--very-faint);
+    margin-left: 0;
+    padding-left: 1.5rem;
+}
+
+small {
+    font-size: var(--small);
+}
+
+sub,
+sup {
+    font-size: 0.75em;
+    line-height: 0;
+    top: -0.4rem;
+    vertical-align: baseline;
+}
+
+sub {
+    top: 0.3rem;
+}

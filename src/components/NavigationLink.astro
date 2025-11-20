@@ -1,0 +1,43 @@
+---
+interface Props {
+    title: string;
+    url: string;
+    current: boolean;
+}
+
+const { title, url, current } = Astro.props;
+---
+
+<li>
+    <a href={url} class:list={[{ current }]}>
+        {title}
+    </a>
+</li>
+
+<style>
+    li {
+        padding-left: 0;
+    }
+
+    a,
+    a:visited,
+    a:hover,
+    a:focus,
+    a:active {
+        border-bottom: 0.175rem solid var(--razzmatazz-transparent);
+        color: var(--razzmatazz);
+        display: block;
+        font-size: var(--small);
+        font-weight: 700;
+        line-height: var(--large);
+        transition: border-bottom-color var(--long);
+    }
+
+    a:hover,
+    a:focus,
+    a:active,
+    .current {
+        border-bottom-color: var(--razzmatazz);
+        transition: border-bottom-color var(--short);
+    }
+</style>

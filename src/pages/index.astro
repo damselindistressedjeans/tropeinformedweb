@@ -1,0 +1,53 @@
+---
+import ArticleLink from '@/components/ArticleLink.astro';
+import Panel from '@/components/Panel.astro';
+import Home from '@/layouts/Home.astro';
+import { getCollection, render } from 'astro:content';
+
+const items = await getCollection('news');
+
+items.sort((a, b) => {
+    return a.id < b.id ? 1 : -1;
+});
+
+const {
+    id,
+    data: { title, date, abstract, tags },
+} = items[0];
+---
+
+<Home>
+    <p class="h1">Research, Tools &amp; Consulting for Games</p>
+    <p>
+        Tropes are tools that can make or break a player’s experience. We
+        develop tools and undertake research to identify and evidence patterns
+        in video game writing and design, and demonstrate when and how they
+        might be subverted or averted. Our work aims to empower game makers to
+        make informed choices about representation, agency, optionality, and
+        dialogue, and enable you to make the games you want to make.
+    </p>
+    <p>
+        Here you’ll find information about <a href="/findings/">our research</a
+        >, the <a href="/tools/">custom tools</a> we develop, and <a
+            href="/news/">what we’re up to</a
+        >. You can also <a href="/collaborate/#about">find out more about us</a>
+        and <a href="/collaborate/">what we can offer you</a>.
+    </p>
+    <Panel
+        heading="Latest news"
+        cta={{
+            text: 'View all news',
+            url: '/news/',
+        }}
+        color="cerulean"
+    >
+        <ArticleLink
+            date={date}
+            title={title}
+            description={abstract}
+            permalink={`/news/${id}/`}
+            tags={tags}
+            nested
+        />
+    </Panel>
+</Home>
