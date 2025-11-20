@@ -33,7 +33,13 @@ const {
                 })
             }
         </p>
-        {nested ? <h3 class="heading">{title}</h3> : <h2 class="heading">{title}</h2>}
+        {
+            nested ? (
+                <h3 class="heading">{title}</h3>
+            ) : (
+                <h2 class="heading">{title}</h2>
+            )
+        }
         <div set:html={marked.parse(description)} />
         <p class="cta">Read more</p>
         {
