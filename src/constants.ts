@@ -1,8 +1,8 @@
 export const constants = {
     meta: {
         title: 'Trope Informed',
-        description: 'Default description goes here.',
-        mailingListUrl: '', //TODO what is this?
+        description: 'Research, Tools & Consulting for Games',
+        mailingListUrl: 'https://forms.office.com/e/dyT6EWQdRE',
         feed: {
             title: 'Trope Informed News',
             description: 'The latest news from Trope Informed',
