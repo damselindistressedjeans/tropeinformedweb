@@ -1,6 +1,9 @@
 ---
 import Panel from '@/components/Panel.astro';
 import Page from '@/layouts/Page.astro';
+import { constants } from '@/constants';
+
+const email = constants.contacts.sean.email;
 ---
 
 <Page
@@ -9,9 +12,20 @@ import Page from '@/layouts/Page.astro';
     heading="Our tools"
     currentArea="tools"
 >
+    <p>
+        In order to undertake our <a href="/findings/">research</a>, we build
+        custom tools, software and resources. Here you can find out more about
+        our tools and try them out for yourself. If you’d like more information
+        about how we can use these tools to <a href="/collaborate/"
+            >help you make the games you want to make</a
+        >, or to suggest future developments, <a href={`mailto:${email}`}
+            >get in touch</a
+        >!
+    </p>
+
     <Panel
         heading="The Video Game Dialogue Corpus"
-        color="turquoise"
+        color="lavender"
         cta={{
             text: 'View the VGDC on Github',
             url: 'https://github.com/seannyD/VideoGameDialogueCorpusPublic',
