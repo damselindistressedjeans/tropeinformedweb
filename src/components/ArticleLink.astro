@@ -8,9 +8,17 @@ interface Props {
     description: string;
     permalink: string;
     tags?: string[];
+    nested?: boolean;
 }
 
-const { date, title, description, permalink, tags = ['news'] } = Astro.props;
+const {
+    date,
+    title,
+    description,
+    permalink,
+    tags = ['news'],
+    nested,
+} = Astro.props;
 ---
 
 <a href={permalink}>
@@ -25,9 +33,15 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
                 })
             }
         </p>
-        <h2>{title}</h2>
+        {
+            nested ? (
+                <h3 class="heading">{title}</h3>
+            ) : (
+                <h2 class="heading">{title}</h2>
+            )
+        }
         <div set:html={marked.parse(description)} />
-        <p class="cta">Read more…</p>
+        <p class="cta">Read more</p>
         {
             tags ? (
                 <Pills
@@ -44,13 +58,14 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
 <style>
     a,
     a:visited {
-        background: white;
+        background: var(--off-white);
         border: none;
         border-radius: 2rem;
         box-shadow: 0 0 1rem -0.5rem rgba(0, 0, 0, 0.5);
         color: var(--text);
+        corner-shape: squircle;
         display: block;
-        padding: calc(2rem - 1px);
+        padding: 2rem;
         outline: 1px solid var(--very-faint);
         top: 0;
         transition:
@@ -69,6 +84,13 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
             box-shadow var(--short);
     }
 
+    a:hover .heading,
+    a:focus .heading,
+    a:active .heading {
+        color: var(--razzmatazz);
+        transition: color var(--short);
+    }
+
     @media (prefers-color-scheme: dark) {
         a,
         a:visited {
@@ -83,10 +105,11 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
         }
     }
 
-    h2 {
+    .heading {
         font-size: var(--large);
         line-height: 1.5;
         margin-top: 0;
+        transition: color var(--long);
     }
 
     .date {
@@ -96,5 +119,9 @@ const { date, title, description, permalink, tags = ['news'] } = Astro.props;
 
     .cta {
         color: var(--razzmatazz);
+    }
+
+    .cta:after {
+        content: '…';
     }
 </style>

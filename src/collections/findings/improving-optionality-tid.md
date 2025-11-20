@@ -12,18 +12,14 @@ tags: [journal article, dialogue, conversation, pragmatics, optionality, agency]
 2. Provide cues for options that accurately and transparently convey the intended pragmatic options of the PC. This is more important than showing the exact phrasing of what will be said.
 3. Provide script notes for voice actors about the pragmatic context of the lines being uttered.
 4. Do not aim to cover all possible choices. Players are unlikely to expect it, since pragmatic optionality in real-life conversations is relatively predictable and systematic. Instead:
-
--   Spend resources where the predictability of a response is lower.
--   Conserve resources where predictability is higher.
--   Have NPCs initiate actions with relatively predictable responses (questions, requests or offers rather than statements).
--   Spend resources on branches that follow polite options. Players are more likely to choose these (face-saving) responses than impolite (face-threatening) responses.
-
+    -   Spend resources where the predictability of a response is lower.
+    -   Conserve resources where predictability is higher.
+    -   Have NPCs initiate actions with relatively predictable responses (questions, requests or offers rather than statements).
+    -   Spend resources on branches that follow polite options. Players are more likely to choose these (face-saving) responses than impolite (face-threatening) responses.
 5. When real choice between outcomes is an illusion, consider:
-
--   Using escalating coercive impoliteness before “but thou must.”
--   Using semantic optionality to allow for more nuanced characterisation and roleplay, thereby enhancing player agency in a different way.
--   Using humour.
-
+    -   Using escalating coercive impoliteness before “but thou must.”
+    -   Using semantic optionality to allow for more nuanced characterisation and roleplay, thereby enhancing player agency in a different way.
+    -   Using humour.
 6. Consider types of optionality beyond the pragmatic -- how and when characters speak, the sounds they utter, the intention behind the words -- and the ramifications this has for their characterisation and relationships.
 
 You can [read the full paper here](ttps://gamestudies.org/2502/articles/rennick_roberts_improving_optionality)

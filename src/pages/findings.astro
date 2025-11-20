@@ -1,11 +1,13 @@
 ---
+import Container from '@/components/Container.astro';
+import Panel from '@/components/Panel.astro';
 import Page from '@/layouts/Page.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const items = await getCollection('findings');
 
 items.sort((a, b) => {
-    return a.data.title < b.data.title ? 1 : -1;
+    return a.data.title > b.data.title ? 1 : -1;
 });
 ---
 
@@ -15,14 +17,73 @@ items.sort((a, b) => {
     heading="Our findings"
     currentArea="findings"
 >
-    <ul>
-        {
-            items.map((item) => (
-                <li>
-                    <h2>{item.data.title}</h2>
-                    <a href={`/findings/${item.id}`}>IS LINK</a>
-                </li>
-            ))
-        }
-    </ul>
+    <p>
+        Here you can read an overview of some of our key findings. Please enjoy
+        perusing and learning.
+    </p>
+    <nav>
+        <h2 class="visually-hidden">Jump to section</h2>
+        <ol>
+            {
+                items.map(({ id, data: { title } }) => (
+                    <li>
+                        <a href={'#' + id}>{title}</a>
+                    </li>
+                ))
+            }
+        </ol>
+    </nav>
+    <div class="topics" slot="sections">
+        <Container>
+            {
+                items.map(async (item) => {
+                    const {
+                        id,
+                        data: { title },
+                    } = item;
+                    const { Content } = await render(item);
+                    return (
+                        <Panel heading={title} color="none" id={id}>
+                            <Content />
+                            <div class="permalink">
+                                <a href={`/findings/${id}/`}>
+                                    Permalink for ‘{title}’
+                                </a>
+                            </div>
+                        </Panel>
+                    );
+                })
+            }
+        </Container>
+    </div>
 </Page>
+
+<style>
+    .topics {
+        background: var(--lavender);
+        margin-top: 4rem;
+        padding: 4rem 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .topics {
+            background: var(--lavender-dark);
+        }
+    }
+
+    .permalink {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 2rem;
+    }
+
+    .permalink a {
+        display: block;
+        font-size: var(--small);
+        text-align: right;
+    }
+
+    .permalink a:before {
+        content: '🔗';
+    }
+</style>

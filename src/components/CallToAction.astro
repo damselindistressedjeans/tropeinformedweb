@@ -1,0 +1,70 @@
+---
+import type { CTA } from '@/types/CTA';
+
+interface Props {
+    cta: CTA;
+}
+
+const {
+    cta: { text, url },
+} = Astro.props;
+---
+
+<div>
+    <a href={url}>{text}</a>
+</div>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 2rem;
+    }
+
+    a,
+    a:visited {
+        background: var(--off-white);
+        border: none;
+        border-radius: 0.25rem;
+        box-shadow: 0 0 1rem -0.5rem rgba(0, 0, 0, 0.5);
+        color: var(--off-black);
+        display: block;
+        font-size: var(--small);
+        font-weight: 700;
+        outline: 1px solid var(--very-faint);
+        padding: 0.5rem 1rem;
+        top: 0;
+        transition:
+            box-shadow var(--long),
+            color var(--long),
+            top var(--long);
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        box-shadow: 0 0.25rem 1.25rem -0.75rem rgba(0, 0, 0, 0.25);
+        color: var(--razzmatazz);
+        top: -0.125rem;
+        transition:
+            box-shadow var(--short),
+            color var(--short),
+            top var(--short);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        a,
+        a:visited {
+            background: var(--off-black);
+            box-shadow: 0 0 1rem -0.5rem rgba(255, 255, 255, 0.125);
+            color: var(--off-white);
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            box-shadow: 0 0.25rem 1.25rem -0.75rem rgba(255, 255, 255, 0.0625);
+            color: var(--razzmatazz);
+        }
+    }
+</style>

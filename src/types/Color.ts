@@ -1,1 +1,1 @@
-export type Color = 'cerulean' | 'razzmatazz' | 'rose' | 'turquoise';
+export type Color = 'cerulean' | 'lavender' | 'razzmatazz' | 'rose' | 'turquoise';

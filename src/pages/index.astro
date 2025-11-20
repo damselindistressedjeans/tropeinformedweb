@@ -1,6 +1,6 @@
 ---
 import ArticleLink from '@/components/ArticleLink.astro';
-import Section from '@/components/Section.astro';
+import Panel from '@/components/Panel.astro';
 import Home from '@/layouts/Home.astro';
 import { getCollection, render } from 'astro:content';
 
@@ -74,22 +74,21 @@ const {
             <p>How do those paragraphs look? Well, they look like this.</p>
         </li>
     </ol>
-    <Fragment slot={'sections'}>
-        <Section
-            heading="Latest news"
-            cta={{
-                text: 'All news',
-                url: '/news/',
-            }}
-            color="cerulean"
-        >
-            <ArticleLink
-                date={date}
-                title={title}
-                description={abstract}
-                permalink={`/news/${id}/`}
-                tags={tags}
-            />
-        </Section>
-    </Fragment>
+    <Panel
+        heading="Latest news"
+        cta={{
+            text: 'View all news',
+            url: '/news/',
+        }}
+        color="cerulean"
+    >
+        <ArticleLink
+            date={date}
+            title={title}
+            description={abstract}
+            permalink={`/news/${id}/`}
+            tags={tags}
+            nested
+        />
+    </Panel>
 </Home>
