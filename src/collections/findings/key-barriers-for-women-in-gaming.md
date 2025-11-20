@@ -1,5 +1,6 @@
 ---
 title: Key Barriers for Women in Gaming
+description: Rennick and Roberts study how women feel about playing video games, in collaboration with Undone Games and Unity. 
 source: "Rennick, S. & Roberts, S. G. (2025). 'Not Gamers, Just Women Who Play Video Games: A Survey of Women’s Attitudes to Mobile Games in the UK', *Sex Roles*."
 url: https://link.springer.com/article/10.1007/s11199-025-01612-3
 category: gender
