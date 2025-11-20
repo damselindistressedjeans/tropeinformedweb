@@ -1,5 +1,6 @@
 ---
 title: Trope-Informed Design
+description: Rennick and Roberts introduce Trope-Informed Design, a new approach to designing game dialogue systems. 
 source: "Rennick, S. & Roberts, S. G. (2021), 'Improving video game conversations with trope-informed design', *Game Studies*."
 url: https://gamestudies.org/2103/articles/rennick_roberts
 category: conversation
