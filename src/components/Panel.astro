@@ -11,13 +11,7 @@ interface Props {
     nested?: boolean;
 }
 
-const {
-    heading,
-    cta = { text: 'This is the call to action', url: '.' },
-    id,
-    color,
-    nested,
-} = Astro.props;
+const { heading, cta, id, color, nested } = Astro.props;
 ---
 
 <section class={color} id={id}>
