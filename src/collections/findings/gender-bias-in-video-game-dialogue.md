@@ -1,5 +1,6 @@
 ---
 title: Gender Bias in Video Game Dialogue
+description: Rennick and Roberts performed the first large-scale test of gender imbalance in video game dialogue. 
 source: Rennick, S. Clinton, M., Ioannidou, E., Oh, L, Clooney, C., E.T., Healy, E., Roberts, S. G. (2023), "Gender Bias in Video Game Dialogue", *Royal Society Open Science*.
 url: https://royalsocietypublishing.org/doi/10.1098/rsos.221095
 category: gender
