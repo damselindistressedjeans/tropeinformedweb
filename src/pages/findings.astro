@@ -36,18 +36,6 @@ const email = constants.contacts.steph.email;
             >hear from you</a
         >.
     </p>
-    <nav>
-        <h2 class="visually-hidden">Jump to section</h2>
-        <ol>
-            {
-                items.map(({ id, data: { title } }) => (
-                    <li>
-                        <a href={'#' + id}>{title}</a>
-                    </li>
-                ))
-            }
-        </ol>
-    </nav>
     <div class="topics" slot="sections">
         <Container>
             {
