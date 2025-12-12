@@ -6,7 +6,3 @@
 @import './typo/general.css';
 @import './utils/hidden.css';
 @import './utils/embeds.css';
-
-* {
-    /* outline: 1px solid rgba(255, 0, 0, 0.1); */
-}
