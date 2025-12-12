@@ -33,11 +33,11 @@ const {
         font-weight: 700;
         outline: 1px solid var(--very-faint);
         padding: 0.5rem 1rem;
-        top: 0;
+        transform: translateY(0);
         transition:
             box-shadow var(--long),
             color var(--long),
-            top var(--long);
+            transform var(--long);
     }
 
     a:hover,
@@ -45,11 +45,11 @@ const {
     a:active {
         box-shadow: 0 0.25rem 1.25rem -0.75rem rgba(0, 0, 0, 0.25);
         color: var(--razzmatazz);
-        top: -0.125rem;
+        transform: translateY(-0.125rem);
         transition:
             box-shadow var(--short),
             color var(--short),
-            top var(--short);
+            transform var(--short);
     }
 
     @media (prefers-color-scheme: dark) {
