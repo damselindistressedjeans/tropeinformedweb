@@ -41,9 +41,19 @@ const { heading, cta, id, color, nested } = Astro.props;
         background: var(--background);
     }
 
+    h2,
+    h3 {
+        color: var(--local-dark);
+    }
+
     @media (prefers-color-scheme: dark) {
         section {
             background: var(--local-dark);
+        }
+
+        h2,
+        h3 {
+            color: var(--local-light);
         }
     }
 </style>
