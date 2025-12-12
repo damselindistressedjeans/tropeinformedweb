@@ -5,19 +5,19 @@
     --razzmatazz-transparent: hsla(334, 85%, 52%, 0);
 
     --cerulean: hsl(195, 100%, 49%);
-    --cerulean-light: hsl(195, 89%, 78%);
+    --cerulean-light: hsl(195, 100%, 87%);
     --cerulean-dark: hsl(195, 100%, 13%);
 
     --lavender: hsl(258, 72%, 79%);
-    --lavender-light: hsl(258, 58%, 87%);
+    --lavender-light: hsl(258, 100%, 94%);
     --lavender-dark: hsl(258, 40%, 17%);
 
     --rose: hsl(322, 77%, 62%);
-    --rose-light: hsl(322, 93%, 84%);
+    --rose-light: hsl(322, 100%, 92%);
     --rose-dark: hsl(322, 51%, 17%);
 
     --turquoise: hsl(178, 63%, 49%);
-    --turquoise-light: hsl(178, 90%, 81%);
+    --turquoise-light: hsl(178, 100%, 88%);
     --turquoise-dark: hsl(178, 93%, 11%);
 
     --off-white: rgba(255, 255, 255, 0.85);
