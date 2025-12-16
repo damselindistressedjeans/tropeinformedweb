@@ -46,9 +46,17 @@ const { heading, cta, id, color, border } = Astro.props;
         margin-bottom: 0;
     }
 
+    h2 {
+        color: var(--local-dark);
+    }
+
     @media (prefers-color-scheme: dark) {
         section {
             background: var(--local-dark);
+        }
+
+        h2 {
+            color: var(--local-light);
         }
     }
 </style>
