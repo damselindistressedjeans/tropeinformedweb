@@ -67,9 +67,9 @@ const {
         display: block;
         padding: 2rem;
         outline: 1px solid var(--very-faint);
-        top: 0;
+        transform: translateY(0);
         transition:
-            top var(--long),
+            transform var(--long),
             box-shadow var(--long);
     }
 
@@ -78,9 +78,9 @@ const {
     a:active {
         box-shadow: 0 0.25rem 1.25rem -0.75rem rgba(0, 0, 0, 0.25);
         color: var(--text);
-        top: -0.25rem;
+        transform: translateY(-0.25rem);
         transition:
-            top var(--short),
+            transform var(--short),
             box-shadow var(--short);
     }
 
@@ -94,14 +94,14 @@ const {
     @media (prefers-color-scheme: dark) {
         a,
         a:visited {
-            background: var(--off-black);
-            box-shadow: 0 0 1rem -0.5rem rgba(255, 255, 255, 0.125);
+            background: var(--lighten-less);
+            box-shadow: none;
         }
 
         a:hover,
         a:focus,
         a:active {
-            box-shadow: 0 0.25rem 1.25rem -0.75rem rgba(255, 255, 255, 0.0625);
+            box-shadow: none;
         }
     }
 
