@@ -3,7 +3,7 @@ title: Workshop - Dialogue and Agency in Video Games (23rd January 2026)
 description: A free online workshop for game developers, writers and researchers.
 abstract: Interactive dialogue is a key video game mechanic for constructing characters, building game worlds and giving the player a sense of agency. How can we use inspiration from real life conversation to improve player experiences in games? In this workshop, we’ll share our research on where dialogue goes wrong in games, and reveal some secrets from linguistics about how to fix these issues. 
 date: 2026-12-09
-tags: [events, talks, workshops]
+tags: [events, talks, workshops, agency]
 ---
 
 ### Join us to learn about how dialogue creates agency in games
