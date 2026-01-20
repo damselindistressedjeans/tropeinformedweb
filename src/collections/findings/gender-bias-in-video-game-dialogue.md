@@ -49,3 +49,7 @@ You can [read an accessible summary](https://theconversation.com/male-video-game
 <div class="yt-embed">
     <iframe width="800" height="450" src="https://www.youtube.com/embed/uezg7hfg_Gc" title="How much do female video game characters speak?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
+
+<div class="yt-embed">
+    <iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/gA--J9d5Qgc?si=ZP6EZeapn2tQAXMX" title="AdventureX 2025 – Talk: Steph Rennick & Seán Roberts - Women's Dialogue in Video Games" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
