@@ -1,7 +1,7 @@
 ---
 title: We're coming to AdventureX 2026!
 description: We're speaking about historical video games at AdventureX 2026.
-abstract: We will be at AdventureX 2026 in London on November 7th, running a panel session "Fact versus Fiction: Creating historical games for a modern audience". 
+abstract: We will be at AdventureX 2026 in London on November 7th, running a panel session "Fact versus Fiction - Creating historical games for a modern audience". 
 date: 2026-07-27
 tags: [events, talks]
 ---
