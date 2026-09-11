@@ -23,4 +23,4 @@ tags: [journal article, dialogue, conversation, pragmatics, optionality, agency]
     -   Using humour.
 6. Consider types of optionality beyond the pragmatic -- how and when characters speak, the sounds they utter, the intention behind the words -- and the ramifications this has for their characterisation and relationships.
 
-You can [read the full paper here](ttps://gamestudies.org/2502/articles/rennick_roberts_improving_optionality)
+You can [read the full paper here](https://gamestudies.org/2502/articles/rennick_roberts_improving_optionality)
